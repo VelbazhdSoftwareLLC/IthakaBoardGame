@@ -1,0 +1,26 @@
+Today we are going to create board game Ithaka for Android. It will be game with ads exchange system added as splash screen. One of the options to monetize your free open source applications is exactly by selling advertisement space inside the applications.
+
+If you like this tutorial please donate:
+
+Company name:		Velbazhd Software LLC
+Company email:		velbazhd.software@gmail.com
+Company IBAN:	BG68FINV91502016122465
+
+---
+
+Each project should have place where to host. We will use Github, because it is the most popular repository at the moment.
+
+---
+
+After repository creation Eclipse Android project should be created.
+
+---
+
+Eclipse project should be filled with the information from the Github repository.  We will do this by cloning the Github project in different directory than the directory created by Eclipse wizard. After that we will merge both directories.
+
+---
+
+After directories merge initial Git commit should be done. This time it is possible to be done inside Eclipse. 
+
+
+
