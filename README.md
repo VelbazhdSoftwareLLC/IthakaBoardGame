@@ -1,4 +1,4 @@
-# IthakaBoardGame
+# Ithaka Board Game
 Ithaka board game is played on a four by four square grid with three pieces in each of four colors. The pieces are initially arranged so that the three pieces of each color occupy a corner space and the two adjacent edge spaces.
 
 All of the pieces are shared by both players. Each player, in turn, moves one piece any number of spaces in a straight orthogonal or diagonal line over as many empty spaces as is desired, with the following restrictions:
