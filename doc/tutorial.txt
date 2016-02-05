@@ -22,5 +22,70 @@ Eclipse project should be filled with the information from the Github repository
 
 After directories merge initial Git commit should be done. This time it is possible to be done inside Eclipse. 
 
+---
+
+The way in which we are going to monetize our work is by showing banners inside the game. In order this goal to be achieved we are going to register new application in our open source ad server.
+
+---
+
+Revive Ad Server is one of the easiest and most efficient banner exchange servers at the time of this writing. Its free version supports only website integration. For the mobile advertising there is paid alternative. Of course we are going to use only the free functionality by loading pure HTML banners in our Android application. 
+
+---
+
+Android applications do not have real URL address that is why we are going to use URL address, which the application will have after Google Play Store publishing. The URL field is required by Revive Ad Server and it is better we to write there something accurate. 
+
+---
+
+After addition of a new website in Revive Ad Server, banner zone should be created. The idea of banner zones is that you can have many different spots with commercials in your website. In our case we are going to have only single banner zone in the splash screen of our application. The best fitted size of our banner zone is 320x320 pixels. That is why we are going to create just zone like this. 
+
+---
+
+
+After the zone creation available banners should be liked to the ad zone. 
+
+---
+
+The charming part of using remote ad server is that you will not need to recompile your Android applications in order to visualize new ads or to include new advertiser's campaigns. 
+
+---
+
+When the zone is created and the banners are liked it is time to generate HTML invocation code, which we are going to use inside of our Android application. In our case we are going to use invocation code with JavaScript calls. 
+
+---
+
+Inside Android HTML file will be in assets folder and we are going to name it banner.html. By this way local HTML file will be loaded in Android WebView control and it will run banner loading. 
+
+---
+
+Local HTML file has the minimum needed web page code before Revive Ad Server invocation code to be injected. 
+
+---
+
+We are ready to create our splash screen Activity. It will be the first window, which Android will load when our application is activated. We will call it SplashActivity and its main goal will be to visualize commercials, loaded from Revive Ad Server. It will have second goal, after certain amount of time, to activate game screen Activity. 
+
+---
+
+Our splash Activity will have only one visual component and it will be WebView (full web browser in fact). It will fill entire screen and it will have id by which we are going to used inside our Java code. 
+
+---
+
+The user interface is described in XML format, but the real code, which is used to work with the user interface, should be written in Java and there is Java class especially prepared by the New Activity Wizard for us. 
+
+---
+
+There are few things which should happen in our splash activity. First of all we should obtain reference to our webView visual component. Of course, JavaScript should be activated in order our banner exchange to work. As you can remember we did generate JavaScript based invocation code. The second step is to load our local HTML file. Timeout for ad visualization is sent by Activity parameter. Game Activity is also sent as parameter. Finally we want our banner to show only once (at application lunch). That is why we will rewrite onResume event. 
+
+---
+
+To serve banners from Internet some additional permissions will be needed. Manifest file is the place where Activity parameters are described. In our case we have two parameters - ad timeout and game Activity redirection. The other thing which we would like to have is splash screen not to be included in the Activities Stack. 
+
+---
+At this moment we are ready to run our application for the first time. It is done by pressing the green play button above the text editor. The only thing which we see is our splash screen with the banner loaded inside. We still do not have our GameActivity created and that is why redirection is not working. 
+
+
+
+
+
+
 
 
