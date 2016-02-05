@@ -138,8 +138,13 @@ We will model the pieces on the board by two-dimensional array. As it is seen al
 
 The game goes in turns and that is why we should keep information which turn is at each moment. Also it is a good idea we to have information when the game is over. 
 
+---
 
+According to the game rules, win situation can appear if there is orthogonal or diagonal line of the same color. Because of this it is very useful we to create fore helping functions to check this condition. 
 
+---
+
+The four helping functions can be used very efficiently to determine the end of the game by meeting the line end condition (there is one another rule for game end). 
 
 
 
