@@ -98,6 +98,30 @@ On a regular basis it is very good approach Git commits to be done in order code
 
 After the addition of game screen redirection from the splash screen is working, but help and about screens are not reachable from any place in the application. Because of this we will add menu options in the game screen. Android menus are organized as resources and first step in menu creation is to create XML resource in the menu folder of the Eclipse project. The second step is menu description. We are going to have only three options in our menu - new game, help and about. To describe the menu is not enough and we should add some Java source code in our GameActivity, which will call the other Activities. First of all menu should be loaded from its XML description. The opposite of the creation is the destruction. And the most important part is option selection event handling. 
 
+---
+
+Once again our game is ready for testing.
+
+---
+
+From art point of view, the game Ithaka is a very simple game. There is a grid 4x4 and playing pieces in four colors. We can escape from drawing a grid by placing 16 white peaces on the screen arranged 4x4. During the game play we will replace white pieces with colored pieces. For now it will be enough if we use art of 5 circles as PNG images. 
+
+---
+
+There are five common raster resolutions in Android - hdpi, ldpi, mdpi, xhdpi and xxhdpi. Each of them is represented as folder in the Eclipse project and content PNG images proper for the resolution. We are going to supply image only for hdpi. 
+
+---
+
+
+
+
+
+
+
+
+
+
+
 
 
 
