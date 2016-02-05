@@ -112,11 +112,31 @@ There are five common raster resolutions in Android - hdpi, ldpi, mdpi, xhdpi an
 
 ---
 
+Nowadays it is very popular software to be develop in three tiers - user interface, object model and database. I Android user interface is presented as group of XML files, object model is presented as Java objects and for database the most popular is SQLite. In our game we are not going to use relational database, because the game is very simple. SQLite can be used for score persistence and user profile, but it is outside of the scope in this tutorial. 
 
+---
 
+Depending on which component you are going to develop first there are two common ways to build software - bottom-up (build the database first) and top-down (build the interface first). In this tutorial we started from the interface first and now it is the time we to start building objects model. In the big software projects formal object-oriented analysis (OOA) and object-oriented design (OOD) is done, but in our case we are going to do very simple intuitive OOA and OOD. The simplest way to do this is by reading the rules and finding all nouns and all verbs. For nouns we will create objects (represented by classes) and for verbs we will create methods (behavior). Of course not all nouns will be represented as Java objects and not all verbs will be implemented as Java functions. 
 
+---
 
+By reading the rules we see that there are 12 pieces in 4 different colors. We have added one extra piece (an empty cell piece). There are different ways to represent the noun piece in Java program, but we will use enumerated type called Piece.
 
+--- 
+
+Second very obvious noun is board. The board has cells and in this cells pieces can be placed. Also some cells on the board are empty. It is very logical that the next data structure which we are going to create will be the Board class. As it is in the real world Java objects have some properties. In the case of the board most important property is its size. We are going to model board size with two static integer class members. At first view some people will say that it is non sense to use constants in this case, but those people will be wrong, because after some time we can decide that the game should be 8x8 for example. 
+
+---
+
+The next interesting property is how long should be the wining line. In the rules it is clear that wining line length (at the moment) is 3. 
+
+---
+
+We will model the pieces on the board by two-dimensional array. As it is seen all model classes are package access. All Activities classes are public, because Android system needs to access them. Our static final members are also with package access. But internal structures of the object should be private in order good OOD to be applied. 
+
+---
+
+The game goes in turns and that is why we should keep information which turn is at each moment. Also it is a good idea we to have information when the game is over. 
 
 
 
