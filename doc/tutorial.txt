@@ -82,6 +82,20 @@ To serve banners from Internet some additional permissions will be needed. Manif
 ---
 At this moment we are ready to run our application for the first time. It is done by pressing the green play button above the text editor. The only thing which we see is our splash screen with the banner loaded inside. We still do not have our GameActivity created and that is why redirection is not working. 
 
+---
+
+The game is so simple that we are going to have only three additional screens - game, about and help. For each screen we are going to create separate Activity. 
+
+---
+
+The simplest way to create help and about screens is just by placing scrollable edit text visual component which is forbidden for focusing or editing. Text used for help and about is placed as string resource in strings.xml. It is done like this in order internationalization to be done in an easy way. For help information we are going to copy the game rules. As about very simple text will be added as description of who is the inventor of the game and why it was created as Android application. 
+
+---
+
+On a regular basis it is very good approach Git commits to be done in order code to be stored and available in the remote repository. This can be done in Eclipse by selecting the project with right hand mouse button click. After that Team->Commit. All new created files should be selected for commit and commit message should be written. Commit and push commands can be done together.
+
+
+
 
 
 
