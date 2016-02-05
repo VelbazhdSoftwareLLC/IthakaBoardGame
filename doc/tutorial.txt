@@ -94,6 +94,9 @@ The simplest way to create help and about screens is just by placing scrollable 
 
 On a regular basis it is very good approach Git commits to be done in order code to be stored and available in the remote repository. This can be done in Eclipse by selecting the project with right hand mouse button click. After that Team->Commit. All new created files should be selected for commit and commit message should be written. Commit and push commands can be done together.
 
+---
+
+After the addition of game screen redirection from the splash screen is working, but help and about screens are not reachable from any place in the application. Because of this we will add menu options in the game screen. Android menus are organized as resources and first step in menu creation is to create XML resource in the menu folder of the Eclipse project. The second step is menu description. We are going to have only three options in our menu - new game, help and about. To describe the menu is not enough and we should add some Java source code in our GameActivity, which will call the other Activities. First of all menu should be loaded from its XML description. The opposite of the creation is the destruction. And the most important part is option selection event handling. 
 
 
 

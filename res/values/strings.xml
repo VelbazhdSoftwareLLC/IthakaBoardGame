@@ -8,6 +8,9 @@
     <string name="title_activity_game">Ithaka Board Game</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_help">Help</string>
+    <string name="new_game_menu">New Game</string>
+    <string name="help_menu">Help</string>
+    <string name="about_menu">About</string>
     <string name="about_text">Ithaka Board Game was invented by L. Lynn Smith in 2002. Android version was implemented by Velbazhd Software LLC as a programming tutorial.</string>
     <string name="help_text">Ithaka is played on a four by four square grid with three pieces in each of four colors. The pieces are initially arranged so that the three pieces of each color occupy a corner space and the two adjacent edge spaces.
 \n\n
