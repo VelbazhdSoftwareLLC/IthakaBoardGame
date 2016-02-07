@@ -146,6 +146,46 @@ According to the game rules, win situation can appear if there is orthogonal or 
 
 The four helping functions can be used very efficiently to determine the end of the game by meeting the line end condition (there is one another rule for game end). 
 
+---
+
+The board of the game has an initial state. The pieces are grouped by colors in the four corners. We are going to initialize the pieces array with the proper configuration. 
+
+---
+
+It is very useful we to be able to reset the game board. 
+
+---
+
+We should be able to mark next move in the object model of the board. 
+
+---
+
+Object-oriented programming is based on data encapsulation. We can see this approach in our private class data members (pieces, turn and gameOver). In order hidden data to be used, we will need getters. In the case of turn and gameOver getters just return the values, because integer and boolean types are Java primitive types. It is not the case with pieces array. Java arrays are objects in their internal nature. Regular return will take outside of the class internal data. The correct approach would be a deep copy of the pieces array, but our project is so small that we are going to break this OOP rule. 
+
+---
+
+According to the game rules, piece moved by the last move can not be moved. Because of this in our board object we should keep track of the last move. There is a second rule for game end and it sounds like this - the game is lost with third move repetition. It seams that we will need to keep track of the moves history. The best way to do this will be by collection of objects. Vector is one of the most used collections. For the objects we will crate class called Move and we will break the OOP's encapsulation rule once again. 
+
+---
+
+It is very important we to model our game as better as possible, because wrong or insufficient data structures will result on wrong or complex algorithms. Writing good OOP programs has it base in doing good OOA and OOD. A lot of programmers are lazy during data structures modeling and after that they have a lot of problems with algorithmic part of the software. Because we will need to store and compare moves, it is very good idea our Move class to has some constructors and its own equals method. 
+
+---
+
+The game rules are not clear enough what is third move repetition. It is very usual case in the software production some details to be unclear. In the world of the commercial software usually you are going to contact your customer and he/she will give you the missing information. In the world of open-source software usually it is very difficult to find answers to your questions. Because we are in the world of OSS we are not going to ask questions, but instead we are going to implement what we think is written in the game rules. In this case we will check for last three moves, played by player who turn is. If three of them are equal we will accept that this will meet second end of the game condition. 
+
+---
+
+Moves are restricted by two rules - last moved piece can not be moved and alone (piece without neighbors of its own color) piece can not be moved. And there is a third condition (also not very clear from the game rules) that there should be empty cells between start and end position. We will create helper function for checking is particular move valid. 
+
+---
+
+In order the move to be valid between start and end position only empty cells should be positioned. In order to check this condition we are going to create a private helper function called hasEmptyPath. 
+
+---
+
+At this stage most of the objects in our model are ready. The next step is connection between user interface and the model. It is a milestone in our project and because of this we will push our changes into the remote repository once again. 
+
 
 
 
