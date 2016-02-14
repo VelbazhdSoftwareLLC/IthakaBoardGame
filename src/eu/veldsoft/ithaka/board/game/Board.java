@@ -7,11 +7,10 @@ class Board {
 	static final int COLS = 4;
 	static final int WIN_LINE_LENGTH = 3;
 
-	private Piece pieces[][] = { { Piece.BLUE, Piece.BLUE, Piece.EMPTY, Piece.FUCHSIA, Piece.FUCHSIA },
-			{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
-			{ Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY },
-			{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
-			{ Piece.ORANGE, Piece.ORANGE, Piece.EMPTY, Piece.GREEN, Piece.GREEN }, };
+	private Piece pieces[][] = { { Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
+			{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
+			{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
+			{ Piece.ORANGE, Piece.ORANGE, Piece.GREEN, Piece.GREEN }, };
 
 	private int turn = 0;
 
@@ -156,11 +155,10 @@ class Board {
 		gameOver = false;
 		moves = new Vector<Move>();
 
-		pieces = new Piece[][] { { Piece.BLUE, Piece.BLUE, Piece.EMPTY, Piece.FUCHSIA, Piece.FUCHSIA },
-				{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
-				{ Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY },
-				{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
-				{ Piece.ORANGE, Piece.ORANGE, Piece.EMPTY, Piece.GREEN, Piece.GREEN }, };
+		pieces = new Piece[][] { { Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
+				{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
+				{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
+				{ Piece.ORANGE, Piece.ORANGE, Piece.GREEN, Piece.GREEN }, };
 	}
 
 	public void next() {

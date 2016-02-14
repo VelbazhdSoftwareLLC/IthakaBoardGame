@@ -186,6 +186,53 @@ In order the move to be valid between start and end position only empty cells sh
 
 At this stage most of the objects in our model are ready. The next step is connection between user interface and the model. It is a milestone in our project and because of this we will push our changes into the remote repository once again. 
 
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The next step will be creation of game screen interface. For now game screen has white background, which is not very proper. We would like to change it to black. It is good practice colors to be stored as XML resources. We will create colors.xml file where to put color values. 
+
+---
+
+Game screen background is adjusted by property in user XML file. 
+
+---
+
+The game interface will consists of 4x4 grid. First it will be only by white pieces. We will describe game user interface by XML tags. We are using very smart way for ImageView ids such as we will represent gird in two-dimensional array. After building the project we see game screen full with white circles. 
+
+---
+
+Having the interface described as XML is not enough. XML description should be connected with Java program. It will be very convenient if keep all references as two-dimensional array. We will connect model objects with the user interface inside the GameActivity. Communication between the UI and the object model will be done from GameActivity to Board and voice versa. 
+
+---
+
+After game screen creation it is very useful to reset the board object. The truth is that UI should be updated according model objects. That is why we are going to create private helper function called updateViews(). The most important is to draw game pieces. All pieces should be with the maximum alpha value of 1. We are going to use 0.5 alpha value when we are doing selection ot the board. Each piece will be drawn according its color. 
+
+---
+
+After we build the game we see the initial game screen with startup configuration as it is described in the game rules. 
+
+
+
+
+
+
+
 
 
 
