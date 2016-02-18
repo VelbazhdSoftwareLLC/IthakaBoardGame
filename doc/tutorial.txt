@@ -227,11 +227,33 @@ After game screen creation it is very useful to reset the board object. The trut
 
 After we build the game we see the initial game screen with startup configuration as it is described in the game rules. 
 
+---
 
+Except visual resources logical games is nice to have sounds. In this project sound can be played on piece click and game over. Wave files are very proper for sounds and should be placed in raw folder of the Android project. For sounds handling some additional variables will be used. Sounds should be loaded in order to be used in the game play. Also sound pool should be released at the end of the application life cycle. 
 
+---
 
+The user will interact with the game by clicking the pieces on the board. Generally the user will try to move particular piece on the particular empty cell. We will achieve this interaction by attaching on click listener to each ImageView on the board. There are different approaches for this purpose. The common way is to attach single on click listener to each View. For us it will be much more efficient to attach only one listener to all 16 cells. When there is only one listener inside the on click event handler all views should be inspected to find which one was clicked. If the game is over nothing left to be done. It is the best place to play the click sound. On piece click will not work if the listener is not attached to all 16 ImageViews. After finding which piece was clicked it should be reported in the Board object. For this reporting new method will be created. 
 
+---
 
+On each move the player should do two things - select piece on the board and select empty cell. It means that when there is a click on the board it can be a click for piece selection or click for empty cell selection. In this situation at specific moment in time one piece may be selected. It is not possible more than one piece to be selected, but we will model selected pieces with two-dimensional boolean array (just in case if the rules will be changed). Selection of the piece should be visible for the player and because of this getter function will be very useful. Selected piece will be drawn with 0.5 alpha property. Private helper function will check if the selection is already done. 
+
+--- 
+
+First click situation which board will handle is situation without selection and the clicked cell has piece in it. The piece will be selected. In most of the cases this selection will be valid with one exception (the last moved piece). We will handle the situation with the last moved piece on later stage. Another private helper function will help us to unselect all the pieces. It will be very useful if all visual controls are updated after the user click. 
+
+---
+
+Second click situation is with selected piece and the clicked cell also has piece in it. First thing which can be done is removing the selection done before that. By this way the user will have a chance to select another piece. 
+
+---
+
+The third common situation is when there is no selection on the board and empty cell is clicked. It is relatively easy situation, because nothing special should be done. 
+
+---
+
+The most complicated click situation is with piece selected on the board and empty cell is clicked. In this situation the player is ready to finish his move. But again there are two cases. It can be a valid move in which case the player's turn is over or it can be an invalid move in which case selection will be removed and the player will have the chance to select once again. In order move to be validated a move object will be crated by private helper function. 
 
 
 

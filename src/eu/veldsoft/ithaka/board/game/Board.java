@@ -12,11 +12,84 @@ class Board {
 			{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
 			{ Piece.ORANGE, Piece.ORANGE, Piece.GREEN, Piece.GREEN }, };
 
+	private boolean selection[][] = { { false, false, false, false }, { false, false, false, false },
+			{ false, false, false, false }, { false, false, false, false }, };
+
 	private int turn = 0;
 
 	private boolean gameOver = false;
 
 	private Vector<Move> moves = new Vector<Move>();
+
+	private boolean hasSelection() {
+		for (int i = 0; i < selection.length; i++) {
+			for (int j = 0; j < selection[i].length; j++) {
+				if (selection[i][j] == true) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	private void unselect() {
+		for (int i = 0; i < selection.length; i++) {
+			for (int j = 0; j < selection[i].length; j++) {
+				selection[i][j] = false;
+			}
+		}
+	}
+
+	private boolean hasEmptyPath(Move move) {
+		/*
+		 * Move to itself is not possible.
+		 */
+		if (move.startX == move.endX && move.startY == move.endY) {
+			return false;
+		}
+
+		int xStep = move.endX - move.startX;
+		int yStep = move.endY - move.startY;
+
+		/*
+		 * Move can be orthogonal or diagonal.
+		 */
+		if (xStep != 0 && yStep != 0 && Math.abs(xStep) != Math.abs(yStep)) {
+			return false;
+		}
+
+		if (xStep != 0) {
+			xStep /= Math.abs(xStep);
+		}
+		if (yStep != 0) {
+			yStep /= Math.abs(yStep);
+		}
+
+		/*
+		 * Full path should be only empty cells.
+		 */
+		for (int i = move.startX + xStep, j = move.startY + yStep; i <= move.endX
+				&& j <= move.endY; i += xStep, j += yStep) {
+			if (pieces[i][j] != Piece.EMPTY) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	private Move formMove(int x, int y) {
+		for (int i = 0; i < selection.length; i++) {
+			for (int j = 0; j < selection[i].length; j++) {
+				if (selection[i][j] == true) {
+					return new Move(i, j, x, y);
+				}
+			}
+		}
+
+		return null;
+	}
 
 	private boolean hasHorizontalLine(int i, int j) {
 		Piece current = pieces[i][j];
@@ -100,44 +173,6 @@ class Board {
 		return true;
 	}
 
-	private boolean hasEmptyPath(Move move) {
-		/*
-		 * Move to itself is not possible.
-		 */
-		if (move.startX == move.endX && move.startY == move.endY) {
-			return false;
-		}
-
-		int xStep = move.endX - move.startX;
-		int yStep = move.endY - move.startY;
-
-		/*
-		 * Move can be orthogonal or diagonal.
-		 */
-		if (xStep != 0 && yStep != 0 && Math.abs(xStep) != Math.abs(yStep)) {
-			return false;
-		}
-
-		if (xStep != 0) {
-			xStep /= Math.abs(xStep);
-		}
-		if (yStep != 0) {
-			yStep /= Math.abs(yStep);
-		}
-
-		/*
-		 * Full path should be only empty cells.
-		 */
-		for (int i = move.startX + xStep, j = move.startY + yStep; i <= move.endX
-				&& j <= move.endY; i += xStep, j += yStep) {
-			if (pieces[i][j] != Piece.EMPTY) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
 	public int getTurn() {
 		return turn;
 	}
@@ -150,6 +185,10 @@ class Board {
 		return pieces;
 	}
 
+	public boolean[][] getSelection() {
+		return selection;
+	}
+
 	public void reset() {
 		turn = 0;
 		gameOver = false;
@@ -159,6 +198,61 @@ class Board {
 				{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
 				{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
 				{ Piece.ORANGE, Piece.ORANGE, Piece.GREEN, Piece.GREEN }, };
+
+		selection = new boolean[][] { { false, false, false, false }, { false, false, false, false },
+				{ false, false, false, false }, { false, false, false, false }, };
+	}
+
+	public boolean click(int x, int y) {
+		if (hasSelection() == true) {
+			if (pieces[x][y] != Piece.EMPTY) {
+				unselect();
+				return false;
+			}
+
+			if (pieces[x][y] == Piece.EMPTY) {
+				Move move = formMove(x, y);
+
+				/*
+				 * If move is not generated there is no valid turn to be done.
+				 */
+				if (move == null) {
+					unselect();
+					return false;
+				}
+
+				if (isValid(move) == true) {
+					/*
+					 * If the move is valid - finish the turn.
+					 */
+					moves.add(move);
+					pieces[move.endX][move.endY] = pieces[move.startX][move.startY];
+					pieces[move.startX][move.startY] = Piece.EMPTY;
+					unselect();
+					return true;
+				} else {
+					/*
+					 * If the move is not valid - remove selection.
+					 */
+					unselect();
+					return false;
+				}
+			}
+		} else {
+			if (pieces[x][y] == Piece.EMPTY) {
+				/*
+				 * Nothing to be done.
+				 */
+				return false;
+			}
+
+			if (pieces[x][y] != Piece.EMPTY) {
+				selection[x][y] = true;
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	public void next() {

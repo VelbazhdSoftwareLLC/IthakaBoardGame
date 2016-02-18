@@ -2,24 +2,58 @@ package eu.veldsoft.ithaka.board.game;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 public class GameActivity extends Activity {
 
 	private Board board = new Board();
 
+	private SoundPool sounds = null;
+
+	private int clickId = -1;
+
+	private int finishId = -1;
+
 	private ImageView pieces[][] = new ImageView[Board.COLS][Board.ROWS];
+
+	private View.OnClickListener onPiceClick = new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			if (board.isGameOver() == true) {
+				return;
+			}
+
+			for (int i = 0; i < pieces.length; i++) {
+				for (int j = 0; j < pieces[i].length; j++) {
+					if (pieces[i][j] == view) {
+						board.click(i, j);
+					}
+				}
+			}
+
+			sounds.play(clickId, 0.99f, 0.99f, 0, 0, 1);
+			updateViews();
+		}
+	};
 
 	private void updateViews() {
 		Piece values[][] = board.getPieces();
+		boolean selected[][] = board.getSelection();
 
 		for (int i = 0; i < pieces.length; i++) {
 			for (int j = 0; j < pieces[i].length; j++) {
-				pieces[i][j].setAlpha(1F);
+				if (selected[i][j] == true) {
+					pieces[i][j].setAlpha(0.5F);
+				} else {
+					pieces[i][j].setAlpha(1.0F);
+				}
 
 				switch (values[i][j]) {
 				case BLUE:
@@ -47,6 +81,10 @@ public class GameActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
 
+		sounds = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+		clickId = sounds.load(this, R.raw.schademans_pipe9, 1);
+		finishId = sounds.load(this, R.raw.game_sound_correct, 1);
+
 		pieces[0][0] = (ImageView) findViewById(R.id.piece00);
 		pieces[0][1] = (ImageView) findViewById(R.id.piece01);
 		pieces[0][2] = (ImageView) findViewById(R.id.piece02);
@@ -63,6 +101,12 @@ public class GameActivity extends Activity {
 		pieces[3][1] = (ImageView) findViewById(R.id.piece31);
 		pieces[3][2] = (ImageView) findViewById(R.id.piece32);
 		pieces[3][3] = (ImageView) findViewById(R.id.piece33);
+
+		for (int i = 0; i < pieces.length; i++) {
+			for (int j = 0; j < pieces[i].length; j++) {
+				pieces[i][j].setOnClickListener(onPiceClick);
+			}
+		}
 
 		board.reset();
 		updateViews();
@@ -93,5 +137,8 @@ public class GameActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+
+		sounds.release();
+		sounds = null;
 	}
 }
