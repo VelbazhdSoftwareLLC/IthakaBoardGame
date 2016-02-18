@@ -69,8 +69,8 @@ class Board {
 		/*
 		 * Full path should be only empty cells.
 		 */
-		for (int i = move.startX + xStep, j = move.startY + yStep; i <= move.endX
-				&& j <= move.endY; i += xStep, j += yStep) {
+		for (int i = move.startX + xStep, j = move.startY + yStep; i != move.endX
+				&& j != move.endY; i += xStep, j += yStep) {
 			if (pieces[i][j] != Piece.EMPTY) {
 				return false;
 			}
@@ -272,12 +272,12 @@ class Board {
 		 */
 		int count = 0;
 		Piece piece = pieces[move.startX][move.startY];
-		for (int i = move.startX - 1; i < move.startX + 1; i++) {
+		for (int i = move.startX - 1; i <= move.startX + 1; i++) {
 			if (i < 0 || i >= COLS) {
 				continue;
 			}
 
-			for (int j = move.startY - 1; j < move.startY + 1; j++) {
+			for (int j = move.startY - 1; j <= move.startY + 1; j++) {
 				if (j < 0 || j >= ROWS) {
 					continue;
 				}
