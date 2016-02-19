@@ -18,20 +18,10 @@ class Board {
 	private int turn = 0;
 
 	private boolean gameOver = false;
+	
+	private boolean turnOver = false;
 
 	private Vector<Move> moves = new Vector<Move>();
-
-	private boolean hasSelection() {
-		for (int i = 0; i < selection.length; i++) {
-			for (int j = 0; j < selection[i].length; j++) {
-				if (selection[i][j] == true) {
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
 
 	private void unselect() {
 		for (int i = 0; i < selection.length; i++) {
@@ -181,6 +171,10 @@ class Board {
 		return gameOver;
 	}
 
+	public boolean isTurnOver() {
+		return turnOver;
+	}
+
 	public Piece[][] getPieces() {
 		return pieces;
 	}
@@ -189,9 +183,22 @@ class Board {
 		return selection;
 	}
 
+	public boolean hasSelection() {
+		for (int i = 0; i < selection.length; i++) {
+			for (int j = 0; j < selection[i].length; j++) {
+				if (selection[i][j] == true) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	public void reset() {
 		turn = 0;
 		gameOver = false;
+		turnOver = false;
 		moves = new Vector<Move>();
 
 		pieces = new Piece[][] { { Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
@@ -207,6 +214,7 @@ class Board {
 		if (hasSelection() == true) {
 			if (pieces[x][y] != Piece.EMPTY) {
 				unselect();
+				turnOver = false;
 				return false;
 			}
 
@@ -218,6 +226,7 @@ class Board {
 				 */
 				if (move == null) {
 					unselect();
+					turnOver = false;
 					return false;
 				}
 
@@ -229,12 +238,14 @@ class Board {
 					pieces[move.endX][move.endY] = pieces[move.startX][move.startY];
 					pieces[move.startX][move.startY] = Piece.EMPTY;
 					unselect();
+					turnOver = true;
 					return true;
 				} else {
 					/*
 					 * If the move is not valid - remove selection.
 					 */
 					unselect();
+					turnOver = false;
 					return false;
 				}
 			}
@@ -243,11 +254,13 @@ class Board {
 				/*
 				 * Nothing to be done.
 				 */
+				turnOver = false;
 				return false;
 			}
 
 			if (pieces[x][y] != Piece.EMPTY) {
 				selection[x][y] = true;
+				turnOver = false;
 				return true;
 			}
 		}

@@ -277,7 +277,11 @@ It is time to write some code for the computer opponent. We will implement the s
 
 ---
 
-Some objects are so often used everywhere in the project that it is convenient to present them as static fields of a common class. In our case the name of the class is Util and the name of the static field is PRNG. PRNG comes from pseudo-random number generator. 
+Some objects are so often used everywhere in the project that it is convenient to present them as static fields of a common class. In our case the name of the class is Util and the name of the static field is PRNG. PRNG comes from pseudo-random number generator. AI move ends by two clicks - stat position and end position. 
+
+---
+
+Because the turn has two stages - piece selection and empty cell selection, it will be very useful end of the turn to be stored in some way (boolean variable, for example). 
 
 
 

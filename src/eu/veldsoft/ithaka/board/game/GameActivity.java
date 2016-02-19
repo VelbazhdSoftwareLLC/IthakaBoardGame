@@ -46,8 +46,21 @@ public class GameActivity extends Activity {
 						Util.PRNG.nextInt(Board.COLS), Util.PRNG.nextInt(Board.ROWS));
 			} while (board.isValid(move) == false);
 
-			board.next();
+			/*
+			 * Do computer move.
+			 */
+			board.click(move.startX, move.startY);
 			updateViews();
+
+			try {
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+			}
+
+			board.click(move.endX, move.endY);
+			updateViews();
+
+			board.next();
 		}
 	};
 
@@ -62,10 +75,11 @@ public class GameActivity extends Activity {
 				return;
 			}
 
+			boolean result = false;
 			for (int i = 0; i < pieces.length; i++) {
 				for (int j = 0; j < pieces[i].length; j++) {
 					if (pieces[i][j] == view) {
-						boolean result = board.click(i, j);
+						result = board.click(i, j);
 						if (result == true) {
 							sounds.play(clickId, 0.99f, 0.99f, 0, 0, 1);
 						}
@@ -73,10 +87,12 @@ public class GameActivity extends Activity {
 				}
 			}
 
-			board.next();
 			updateViews();
 
-			handler.postDelayed(ai, 500);
+			if (result == true && board.isTurnOver() == true) {
+				board.next();
+				handler.postDelayed(ai, 500);
+			}
 		}
 	};
 
