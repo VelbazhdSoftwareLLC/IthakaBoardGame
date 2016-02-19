@@ -307,7 +307,22 @@ Screen shots of the application are required for the publishing. The best way to
 
 The final step for Google Play publishing is just to hit Publish button and to wait application to appear in the store. 
 
+---
+
+F-Droid publishing is a little bit more different, because F-Droid is OSS store. It starts by fork of F-Droid / Data repository in GitLab. After the fork cloning should be done. For the publishing meta data file we will need a new git branch. After the branch is switched a new meta file should be created with the application package as name and txt as extension. Text file should describe the application. The only tricky part is the commit hash code, which can be found in GitHub last commit information. We have anti-feature, because we visualize ads. The development is under GPLv3 license. And in the application manifest it is written that this is our first version. 
+
+---
+
+When description file is ready it should be committed and pushed to the remote repository. Commit can be seen in GitLab repository. A merge request should be submitted. That is it. Now we can only wait the application to be published. 
+
+---
 
 
+Thanks for the watching. 
 
+If you really like this tutorial, please donate. 
+
+Company name:		Velbazhd Software LLC
+Company email:		velbazhd.software@gmail.com
+Company IBAN:		BG68FINV91502016122465
 
