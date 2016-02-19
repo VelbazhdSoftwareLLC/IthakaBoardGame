@@ -255,7 +255,29 @@ The third common situation is when there is no selection on the board and empty 
 
 The most complicated click situation is with piece selected on the board and empty cell is clicked. In this situation the player is ready to finish his move. But again there are two cases. It can be a valid move in which case the player's turn is over or it can be an invalid move in which case selection will be removed and the player will have the chance to select once again. In order move to be validated a move object will be crated by private helper function. 
 
+---
 
+Even that a lot of functionality is missing a simple game can be played at this stage of development. 
+
+---
+
+At each moment in time we should be able to start a new game. It is not the best approach to interrupt current game, but it is fine for initial solution. 
+
+---
+
+When the game is over it is good winning line to be visually marked. Public helper function in the Board class will help by providing two-dimensional array with cells participating in the win combination. 
+
+---
+
+We are going to limit human player to be first in the game play. In such games it is common case players to switch for the first turn, but it is a complication which we will leave for more mature version of the product. 
+
+---
+
+It is time to write some code for the computer opponent. We will implement the simplest possible artificial intelligence. Computer opponent decision making will be done in separate thread. At the end of each human move AI will be activated by using thread handler. First of all AI will not play if the game is over. AI will not play if it is not its turn. At the end of computer opponent move visual information should be updated. The simplest possible AI strategy is just to select random valid move. Small children usually play by this way. There is a risk in this approach for move generation and the risk is that the board can be blocked with no valid move available. In such situation do-while loop will be infinite and it will cause problems to the Android OS. 
+
+---
+
+Some objects are so often used everywhere in the project that it is convenient to present them as static fields of a common class. In our case the name of the class is Util and the name of the static field is PRNG. PRNG comes from pseudo-random number generator. 
 
 
 

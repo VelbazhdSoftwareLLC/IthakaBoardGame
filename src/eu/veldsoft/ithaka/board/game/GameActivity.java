@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +24,33 @@ public class GameActivity extends Activity {
 
 	private ImageView pieces[][] = new ImageView[Board.COLS][Board.ROWS];
 
+	private final Handler handler = new Handler();
+
+	private Runnable ai = new Runnable() {
+		@Override
+		public void run() {
+			if (board.isGameOver() == true) {
+				return;
+			}
+
+			if (board.getTurn() % 2 != 1) {
+				return;
+			}
+
+			/*
+			 * Selection of random move.
+			 */
+			Move move = null;
+			do {
+				move = new Move(Util.PRNG.nextInt(Board.COLS), Util.PRNG.nextInt(Board.ROWS),
+						Util.PRNG.nextInt(Board.COLS), Util.PRNG.nextInt(Board.ROWS));
+			} while (board.isValid(move) == false);
+
+			board.next();
+			updateViews();
+		}
+	};
+
 	private View.OnClickListener onPiceClick = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
@@ -30,16 +58,25 @@ public class GameActivity extends Activity {
 				return;
 			}
 
+			if (board.getTurn() % 2 != 0) {
+				return;
+			}
+
 			for (int i = 0; i < pieces.length; i++) {
 				for (int j = 0; j < pieces[i].length; j++) {
 					if (pieces[i][j] == view) {
-						board.click(i, j);
+						boolean result = board.click(i, j);
+						if (result == true) {
+							sounds.play(clickId, 0.99f, 0.99f, 0, 0, 1);
+						}
 					}
 				}
 			}
 
-			sounds.play(clickId, 0.99f, 0.99f, 0, 0, 1);
+			board.next();
 			updateViews();
+
+			handler.postDelayed(ai, 500);
 		}
 	};
 
@@ -71,6 +108,17 @@ public class GameActivity extends Activity {
 				case EMPTY:
 					pieces[i][j].setImageResource(R.drawable.white);
 					break;
+				}
+			}
+		}
+
+		if (board.isGameOver() == true) {
+			boolean winners[][] = board.winners();
+			for (int i = 0; i < pieces.length; i++) {
+				for (int j = 0; j < pieces[i].length; j++) {
+					if (winners[i][j] == false) {
+						pieces[i][j].setAlpha(0.3F);
+					}
 				}
 			}
 		}
@@ -123,6 +171,9 @@ public class GameActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.new_game:
+			board.reset();
+			sounds.play(finishId, 0.99f, 0.99f, 0, 0, 1);
+			updateViews();
 			break;
 		case R.id.help:
 			startActivity(new Intent(GameActivity.this, HelpActivity.class));

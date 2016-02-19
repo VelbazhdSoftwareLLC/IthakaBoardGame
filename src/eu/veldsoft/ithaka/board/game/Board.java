@@ -348,4 +348,36 @@ class Board {
 
 		return false;
 	}
+
+	public boolean[][] winners() {
+		boolean winners[][] = { { false, false, false, false }, { false, false, false, false },
+				{ false, false, false, false }, { false, false, false, false }, };
+
+		for (int i = 0; i < winners.length; i++) {
+			for (int j = 0; j < winners[i].length; j++) {
+				if (hasHorizontalLine(i, j) == true) {
+					for (int k = 0; k < WIN_LINE_LENGTH; k++) {
+						winners[i + k][j] = true;
+					}
+				}
+				if (hasVerticalLine(i, j) == true) {
+					for (int k = 0; k < WIN_LINE_LENGTH; k++) {
+						winners[i][j + k] = true;
+					}
+				}
+				if (hasFirstDiagonalLine(i, j) == true) {
+					for (int k = 0; k < WIN_LINE_LENGTH; k++) {
+						winners[i + k][j + k] = true;
+					}
+				}
+				if (hasSecondDiagonalLine(i, j) == true) {
+					for (int k = 0; k < WIN_LINE_LENGTH; k++) {
+						winners[i - k][j + k] = true;
+					}
+				}
+			}
+		}
+
+		return winners;
+	}
 }
