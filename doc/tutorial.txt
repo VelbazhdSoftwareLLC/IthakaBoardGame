@@ -291,6 +291,21 @@ When the game is over it is good approach to inform the user for this. Also the 
 
 With this final source code the basic game play is ready. Also the first version of the product can be published. There are some bugs in the game, but bug fixing process will be done outside of this presentation. 
 
+---
+
+Almost final step of the software development life cycle is product publishing (there is testing, debugging and maintenance but in the OSS world every interested user can do this for us). We are going to publish in two places. The common publishing store is Google Play and the secondary store is F-Droid, which is only for OSS applications. 
+
+---
+
+Google Play publishing starts from Developer Console. Application should have language selected and product name written. Application description should be added. The most important part of the application publishing is to provide digitally signed APK file. By right click on the project folder Android Tools ->  Export Signed Application Package. Publishing of APK will unlock most of the fields which should be entered during publishing process. Price and distribution countries should be selected. Because there are ads in the game we will mark this in our application form. Main description should be filled with some images in order publishing process to be finished. 
+
+---
+
+Screen shots of the application are required for the publishing. The best way to get them is by Eclipse ADT plug-in. 
+
+---
+
+The final step for Google Play publishing is just to hit Publish button and to wait application to appear in the store. 
 
 
 
