@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class GameActivity extends Activity {
 
@@ -38,6 +39,13 @@ public class GameActivity extends Activity {
 			}
 
 			/*
+			 * Do not search for valid move if there is no any.
+			 */
+			if (board.hasValidMove() == false) {
+				return;
+			}
+
+			/*
 			 * Selection of random move.
 			 */
 			Move move = null;
@@ -60,7 +68,18 @@ public class GameActivity extends Activity {
 			board.click(move.endX, move.endY);
 			updateViews();
 
-			board.next();
+			if (board.checkForGameOver() == true) {
+				board.setGameOver(true);
+
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+				}
+
+				updateViews();
+			} else {
+				board.next();
+			}
 		}
 	};
 
@@ -89,7 +108,16 @@ public class GameActivity extends Activity {
 
 			updateViews();
 
-			if (result == true && board.isTurnOver() == true) {
+			if (board.checkForGameOver() == true) {
+				board.setGameOver(true);
+
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+				}
+
+				updateViews();
+			} else if (result == true && board.isTurnOver() == true) {
 				board.next();
 				handler.postDelayed(ai, 500);
 			}
@@ -137,6 +165,9 @@ public class GameActivity extends Activity {
 					}
 				}
 			}
+
+			Toast.makeText(this, getResources().getString(R.string.game_over_message), Toast.LENGTH_LONG).show();
+			sounds.play(finishId, 0.99f, 0.99f, 0, 0, 1);
 		}
 	}
 

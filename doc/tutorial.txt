@@ -281,9 +281,15 @@ Some objects are so often used everywhere in the project that it is convenient t
 
 ---
 
-Because the turn has two stages - piece selection and empty cell selection, it will be very useful end of the turn to be stored in some way (boolean variable, for example). 
+Because the turn has two stages - piece selection and empty cell selection, it will be very useful end of the turn to be stored in some way (boolean variable, for example). Also it is good to stop for a moment computer move in order human to see what is going on. 
 
+---
 
+When the game is over it is good approach to inform the user for this. Also the game can over after each turn. Board public helper function will help to find game over conditions. The most complicated game over condition is the presence of valid move. Additional public helper function will try all possible moves with the hope that at least one will be valid. 
+
+---
+
+With this final source code the basic game play is ready. Also the first version of the product can be published. There are some bugs in the game, but bug fixing process will be done outside of this presentation. 
 
 
 

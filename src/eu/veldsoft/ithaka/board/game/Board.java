@@ -18,7 +18,7 @@ class Board {
 	private int turn = 0;
 
 	private boolean gameOver = false;
-	
+
 	private boolean turnOver = false;
 
 	private Vector<Move> moves = new Vector<Move>();
@@ -165,6 +165,10 @@ class Board {
 
 	public int getTurn() {
 		return turn;
+	}
+
+	public void setGameOver(boolean gameOver) {
+		this.gameOver = gameOver;
 	}
 
 	public boolean isGameOver() {
@@ -318,6 +322,10 @@ class Board {
 	public boolean hasThirdMoveRepetition() {
 		int count = 0;
 
+		if (moves.size() <= 0) {
+			return false;
+		}
+
 		/*
 		 * Last move will be compared with moves before that.
 		 */
@@ -357,6 +365,39 @@ class Board {
 					return true;
 				}
 			}
+		}
+
+		return false;
+	}
+
+	public boolean hasValidMove() {
+		Move move = new Move(-1, -1, -1, -1);
+		for (move.startX = 0; move.startX < COLS; move.startX++) {
+			for (move.startY = 0; move.startY < ROWS; move.startY++) {
+				for (move.endX = 0; move.endX < COLS; move.endX++) {
+					for (move.endY = 0; move.endY < ROWS; move.endY++) {
+						if (isValid(move) == true) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+
+	public boolean checkForGameOver() {
+		if (hasWinner() == true) {
+			return true;
+		}
+
+		if (hasThirdMoveRepetition() == true) {
+			return true;
+		}
+
+		if (hasValidMove() == true) {
+			return false;
 		}
 
 		return false;
