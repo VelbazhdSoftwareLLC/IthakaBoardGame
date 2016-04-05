@@ -2,27 +2,66 @@ package eu.veldsoft.ithaka.board.game;
 
 import java.util.Vector;
 
+/**
+ * Object-oriented representation of the game board.
+ * 
+ * @author Todor Balabanov
+ */
 class Board {
+	/**
+	 * Number of rows on the game board.
+	 */
 	static final int ROWS = 4;
+
+	/**
+	 * Number of columns on the game board.
+	 */
 	static final int COLS = 4;
+
+	/**
+	 * Win line size.
+	 */
 	static final int WIN_LINE_LENGTH = 3;
 
-	private Piece pieces[][] = { { Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
+	/**
+	 * Pieces on the bard.
+	 */
+	private Piece pieces[][] = {
+			{ Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
 			{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
 			{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
 			{ Piece.ORANGE, Piece.ORANGE, Piece.GREEN, Piece.GREEN }, };
 
-	private boolean selection[][] = { { false, false, false, false }, { false, false, false, false },
-			{ false, false, false, false }, { false, false, false, false }, };
+	/**
+	 * Selected pieces on the board.
+	 */
+	private boolean selection[][] = { { false, false, false, false },
+			{ false, false, false, false }, { false, false, false, false },
+			{ false, false, false, false }, };
 
+	/**
+	 * Turns counter.
+	 */
 	private int turn = 0;
 
+	/**
+	 * Game over flag.
+	 */
 	private boolean gameOver = false;
 
+	/**
+	 * Turn over flag.
+	 */
 	private boolean turnOver = false;
 
+	/**
+	 * Moves history.
+	 */
 	private Vector<Move> moves = new Vector<Move>();
 
+	/**
+	 * Unselect all piece on the board.
+	 */
 	private void unselect() {
 		for (int i = 0; i < selection.length; i++) {
 			for (int j = 0; j < selection[i].length; j++) {
@@ -31,16 +70,24 @@ class Board {
 		}
 	}
 
+	/**
+	 * Check for available path for piece traveling during the turn.
+	 * 
+	 * @param move
+	 *            Move to be checked.
+	 * @return True if the path is available, false otherwise.
+	 */
 	private boolean hasEmptyPath(Move move) {
 		/*
 		 * Move to itself is not possible.
 		 */
-		if (move.startX == move.endX && move.startY == move.endY) {
+		if (move.getStartX() == move.getEndX()
+				&& move.getStartY() == move.getEndY()) {
 			return false;
 		}
 
-		int xStep = move.endX - move.startX;
-		int yStep = move.endY - move.startY;
+		int xStep = move.getEndX() - move.getStartX();
+		int yStep = move.getEndY() - move.getStartY();
 
 		/*
 		 * Move can be orthogonal or diagonal.
@@ -59,8 +106,8 @@ class Board {
 		/*
 		 * Full path should be only empty cells.
 		 */
-		for (int i = move.startX + xStep, j = move.startY + yStep; i != move.endX
-				&& j != move.endY; i += xStep, j += yStep) {
+		for (int i = move.getStartX() + xStep, j = move.getStartY() + yStep; i != move
+				.getEndX() && j != move.getEndY(); i += xStep, j += yStep) {
 			if (pieces[i][j] != Piece.EMPTY) {
 				return false;
 			}
@@ -69,6 +116,15 @@ class Board {
 		return true;
 	}
 
+	/**
+	 * Form move from the selected cell and destination coordinates.
+	 * 
+	 * @param x
+	 *            Destination x coordinate.
+	 * @param y
+	 *            Destination y coordinate.
+	 * @return Move object.
+	 */
 	private Move formMove(int x, int y) {
 		for (int i = 0; i < selection.length; i++) {
 			for (int j = 0; j < selection[i].length; j++) {
@@ -81,6 +137,15 @@ class Board {
 		return null;
 	}
 
+	/**
+	 * Check for straight horizontal line.
+	 * 
+	 * @param i
+	 *            Line start x coordinate.
+	 * @param j
+	 *            Line start y coordinate.
+	 * @return True if there is straight line, false otherwise.
+	 */
 	private boolean hasHorizontalLine(int i, int j) {
 		Piece current = pieces[i][j];
 
@@ -100,6 +165,15 @@ class Board {
 		return true;
 	}
 
+	/**
+	 * Check for straight vertical line.
+	 * 
+	 * @param i
+	 *            Line start x coordinate.
+	 * @param j
+	 *            Line start y coordinate.
+	 * @return True if there is straight line, false otherwise.
+	 */
 	private boolean hasVerticalLine(int i, int j) {
 		Piece current = pieces[i][j];
 
@@ -119,6 +193,15 @@ class Board {
 		return true;
 	}
 
+	/**
+	 * Check for straight diagonal line.
+	 * 
+	 * @param i
+	 *            Line start x coordinate.
+	 * @param j
+	 *            Line start y coordinate.
+	 * @return True if there is straight line, false otherwise.
+	 */
 	private boolean hasFirstDiagonalLine(int i, int j) {
 		Piece current = pieces[i][j];
 
@@ -141,6 +224,15 @@ class Board {
 		return true;
 	}
 
+	/**
+	 * Check for straight diagonal line.
+	 * 
+	 * @param i
+	 *            Line start x coordinate.
+	 * @param j
+	 *            Line start y coordinate.
+	 * @return True if there is straight line, false otherwise.
+	 */
 	private boolean hasSecondDiagonalLine(int i, int j) {
 		Piece current = pieces[i][j];
 
@@ -163,30 +255,69 @@ class Board {
 		return true;
 	}
 
+	/**
+	 * Turn getter.
+	 * 
+	 * @return Turn as number.
+	 */
 	public int getTurn() {
 		return turn;
 	}
 
+	/**
+	 * Game over flag setter.
+	 * 
+	 * @param gameOver
+	 *            True if the game is over, false otherwise.
+	 */
 	public void setGameOver(boolean gameOver) {
 		this.gameOver = gameOver;
 	}
 
+	/**
+	 * Is game over getter.
+	 * 
+	 * @return True if the game is over, false otherwise.
+	 */
 	public boolean isGameOver() {
 		return gameOver;
 	}
 
+	/**
+	 * Is turn over getter.
+	 * 
+	 * @return True if the turn is over, false otherwise.
+	 */
 	public boolean isTurnOver() {
 		return turnOver;
 	}
 
+	/**
+	 * Pieces on the board getter.
+	 * 
+	 * @return Two-dimensional array with the pieces on the board.
+	 */
 	public Piece[][] getPieces() {
+		// TODO Do a deep copy of the array.
 		return pieces;
 	}
 
+	/**
+	 * Selected pieces on the board.
+	 * 
+	 * @return Two-dimensional array with the true for the selected pieces and
+	 *         false for non selected pieces.
+	 */
 	public boolean[][] getSelection() {
+		// TODO Do a deep copy of the array.
 		return selection;
 	}
 
+	/**
+	 * Check for selected pieces on the board.
+	 * 
+	 * @return True if there is a selection on the board, false otherwise.
+	 */
 	public boolean hasSelection() {
 		for (int i = 0; i < selection.length; i++) {
 			for (int j = 0; j < selection[i].length; j++) {
@@ -199,102 +330,66 @@ class Board {
 		return false;
 	}
 
+	/**
+	 * Reset the board in the initial conditions.
+	 */
 	public void reset() {
 		turn = 0;
 		gameOver = false;
 		turnOver = false;
-		moves = new Vector<Move>();
+		moves.clear();
 
-		pieces = new Piece[][] { { Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
+		pieces = new Piece[][] {
+				{ Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA },
 				{ Piece.BLUE, Piece.EMPTY, Piece.EMPTY, Piece.FUCHSIA },
 				{ Piece.ORANGE, Piece.EMPTY, Piece.EMPTY, Piece.GREEN },
 				{ Piece.ORANGE, Piece.ORANGE, Piece.GREEN, Piece.GREEN }, };
 
-		selection = new boolean[][] { { false, false, false, false }, { false, false, false, false },
-				{ false, false, false, false }, { false, false, false, false }, };
+		selection = new boolean[][] { { false, false, false, false },
+				{ false, false, false, false }, { false, false, false, false },
+				{ false, false, false, false }, };
 	}
 
-	public boolean click(int x, int y) {
-		if (hasSelection() == true) {
-			if (pieces[x][y] != Piece.EMPTY) {
-				unselect();
-				turnOver = false;
-				return false;
-			}
-
-			if (pieces[x][y] == Piece.EMPTY) {
-				Move move = formMove(x, y);
-
-				/*
-				 * If move is not generated there is no valid turn to be done.
-				 */
-				if (move == null) {
-					unselect();
-					turnOver = false;
-					return false;
-				}
-
-				if (isValid(move) == true) {
-					/*
-					 * If the move is valid - finish the turn.
-					 */
-					moves.add(move);
-					pieces[move.endX][move.endY] = pieces[move.startX][move.startY];
-					pieces[move.startX][move.startY] = Piece.EMPTY;
-					unselect();
-					turnOver = true;
-					return true;
-				} else {
-					/*
-					 * If the move is not valid - remove selection.
-					 */
-					unselect();
-					turnOver = false;
-					return false;
-				}
-			}
-		} else {
-			if (pieces[x][y] == Piece.EMPTY) {
-				/*
-				 * Nothing to be done.
-				 */
-				turnOver = false;
-				return false;
-			}
-
-			if (pieces[x][y] != Piece.EMPTY) {
-				selection[x][y] = true;
-				turnOver = false;
-				return true;
-			}
+	/**
+	 * Check the piece on the specific coordinates for participation in the last
+	 * move.
+	 * 
+	 * @param x
+	 *            Piece x coordinate.
+	 * @param y
+	 *            Piece y coordinate.
+	 * @return True if the piece was part of the last move, false otherwise.
+	 */
+	private boolean lastMoved(int x, int y) {
+		/*
+		 * Last moved piece can not be moved again.
+		 */
+		if (moves.size() > 0 && x == moves.lastElement().getEndX()
+				&& y == moves.lastElement().getEndY()) {
+			return true;
 		}
 
 		return false;
 	}
 
-	public void next() {
-		turn++;
-	}
-
-	public boolean isValid(Move move) {
-		/*
-		 * Last moved piece can not be moved again.
-		 */
-		if (moves.size() > 0 && move.startX == moves.lastElement().endX && move.startY == moves.lastElement().endY) {
-			return false;
-		}
-
-		/*
-		 * Check for neighbors with the same color. Observe array boundaries.
-		 */
+	/**
+	 * Check for neighbors with the same color.
+	 * 
+	 * @param x
+	 *            Piece x coordinate.
+	 * @param y
+	 *            Piece y coordinate.
+	 * @return True if it has neighbors from the same color, false otherwise.
+	 */
+	private boolean hasOwnColorNeighbors(int x, int y) {
 		int count = 0;
-		Piece piece = pieces[move.startX][move.startY];
-		for (int i = move.startX - 1; i <= move.startX + 1; i++) {
+		Piece piece = pieces[x][y];
+		for (int i = x - 1; i <= y + 1; i++) {
 			if (i < 0 || i >= COLS) {
 				continue;
 			}
 
-			for (int j = move.startY - 1; j <= move.startY + 1; j++) {
+			for (int j = y - 1; j <= y + 1; j++) {
 				if (j < 0 || j >= ROWS) {
 					continue;
 				}
@@ -309,6 +404,125 @@ class Board {
 			return false;
 		}
 
+		return true;
+	}
+
+	/**
+	 * Manipulate board with a click on the specific coordinates.
+	 * 
+	 * @param x
+	 *            Coordinate x of the click.
+	 * @param y
+	 *            Coordinate y of the click.
+	 * @return True if the click was successful, false otherwise.
+	 */
+	public boolean click(int x, int y) {
+		/*
+		 * If there is a selected piece it should be moved.
+		 */
+		if (hasSelection() == true) {
+			/*
+			 * Pice can be moved only in the empty cell.
+			 */
+			if (pieces[x][y] != Piece.EMPTY) {
+				unselect();
+				turnOver = false;
+				return false;
+			}
+
+			/*
+			 * Try to do the move.
+			 */
+			if (pieces[x][y] == Piece.EMPTY) {
+				Move move = formMove(x, y);
+
+				/*
+				 * If move is not generated there is no valid turn to be done.
+				 */
+				if (move == null) {
+					unselect();
+					turnOver = false;
+					return false;
+				}
+
+				/*
+				 * Do the move if it is a valid move.
+				 */
+				if (isValid(move) == true) {
+					/*
+					 * If the move is valid - finish the turn.
+					 */
+					moves.add(move);
+					pieces[move.getEndX()][move.getEndY()] = pieces[move
+							.getStartX()][move.getStartY()];
+					pieces[move.getStartX()][move.getStartY()] = Piece.EMPTY;
+					unselect();
+					turnOver = true;
+					return true;
+				} else {
+					/*
+					 * If the move is not valid - remove selection.
+					 */
+					unselect();
+					turnOver = false;
+					return false;
+				}
+			}
+			/*
+			 * If there is a no selected piece it should selected.
+			 */
+		} else {
+			/*
+			 * Nothing to be done.
+			 */
+			if (pieces[x][y] == Piece.EMPTY) {
+				turnOver = false;
+				return false;
+			}
+
+			/*
+			 * Do piece selection.
+			 */
+			if (pieces[x][y] != Piece.EMPTY && lastMoved(x, y) == false
+					&& hasOwnColorNeighbors(x, y) == true) {
+				selection[x][y] = true;
+				turnOver = false;
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Increment turn counter.
+	 */
+	public void next() {
+		turn++;
+	}
+
+	/**
+	 * Check is the move valid.
+	 * 
+	 * @param move
+	 *            Move to be checked.
+	 * @return True if the move is valid, false otherwise.
+	 */
+	public boolean isValid(Move move) {
+		/*
+		 * Last moved piece can not be moved again.
+		 */
+		if (lastMoved(move.getStartX(), move.getStartY()) == true) {
+			return false;
+		}
+
+		/*
+		 * Check for neighbors with the same color. Observe array boundaries.
+		 */
+		if (hasOwnColorNeighbors(move.getStartX(), move.getStartY()) == false) {
+			return false;
+		}
+
 		/*
 		 * Check for empty cells between start and end.
 		 */
@@ -319,6 +533,11 @@ class Board {
 		return true;
 	}
 
+	/**
+	 * Check for third move repetition.
+	 * 
+	 * @return True if the move was repeated, false otherwise.
+	 */
 	public boolean hasThirdMoveRepetition() {
 		int count = 0;
 
@@ -345,6 +564,11 @@ class Board {
 		return false;
 	}
 
+	/**
+	 * Check for winner combination on the board.
+	 * 
+	 * @return True if there is a winner combination, false otherwise.
+	 */
 	public boolean hasWinner() {
 		for (int i = 0; i < pieces.length; i++) {
 			for (int j = 0; j < pieces[i].length; j++) {
@@ -370,13 +594,17 @@ class Board {
 		return false;
 	}
 
+	/**
+	 * Check for available valid move.
+	 * 
+	 * @return True if there is a valid move, false otherwise.
+	 */
 	public boolean hasValidMove() {
-		Move move = new Move(-1, -1, -1, -1);
-		for (move.startX = 0; move.startX < COLS; move.startX++) {
-			for (move.startY = 0; move.startY < ROWS; move.startY++) {
-				for (move.endX = 0; move.endX < COLS; move.endX++) {
-					for (move.endY = 0; move.endY < ROWS; move.endY++) {
-						if (isValid(move) == true) {
+		for (int sx = 0; sx < COLS; sx++) {
+			for (int sy = 0; sy < ROWS; sy++) {
+				for (int ex = 0; ex < COLS; ex++) {
+					for (int ey = 0; ey < ROWS; ey++) {
+						if (isValid(new Move(sx, sy, ex, ey)) == true) {
 							return true;
 						}
 					}
@@ -387,6 +615,11 @@ class Board {
 		return false;
 	}
 
+	/**
+	 * Check for game over conditions according to the game rules.
+	 * 
+	 * @return True if there are game over condition, false otherwise.
+	 */
 	public boolean checkForGameOver() {
 		if (hasWinner() == true) {
 			return true;
@@ -396,16 +629,23 @@ class Board {
 			return true;
 		}
 
-		if (hasValidMove() == true) {
-			return false;
+		if (hasValidMove() == false) {
+			return true;
 		}
 
 		return false;
 	}
 
+	/**
+	 * Provide two-dimensional array with the winners combinations.
+	 * 
+	 * @return Two-dimensional array with true in the combination and false if
+	 *         it is not in the combination.
+	 */
 	public boolean[][] winners() {
-		boolean winners[][] = { { false, false, false, false }, { false, false, false, false },
-				{ false, false, false, false }, { false, false, false, false }, };
+		boolean winners[][] = { { false, false, false, false },
+				{ false, false, false, false }, { false, false, false, false },
+				{ false, false, false, false }, };
 
 		for (int i = 0; i < winners.length; i++) {
 			for (int j = 0; j < winners[i].length; j++) {

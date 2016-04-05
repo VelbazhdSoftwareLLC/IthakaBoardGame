@@ -50,14 +50,16 @@ public class GameActivity extends Activity {
 			 */
 			Move move = null;
 			do {
-				move = new Move(Util.PRNG.nextInt(Board.COLS), Util.PRNG.nextInt(Board.ROWS),
-						Util.PRNG.nextInt(Board.COLS), Util.PRNG.nextInt(Board.ROWS));
+				move = new Move(Util.PRNG.nextInt(Board.COLS),
+						Util.PRNG.nextInt(Board.ROWS),
+						Util.PRNG.nextInt(Board.COLS),
+						Util.PRNG.nextInt(Board.ROWS));
 			} while (board.isValid(move) == false);
 
 			/*
 			 * Do computer move.
 			 */
-			board.click(move.startX, move.startY);
+			board.click(move.getStartX(), move.getStartY());
 			updateViews();
 
 			try {
@@ -65,7 +67,7 @@ public class GameActivity extends Activity {
 			} catch (InterruptedException e) {
 			}
 
-			board.click(move.endX, move.endY);
+			board.click(move.getEndX(), move.getEndY());
 			updateViews();
 
 			if (board.checkForGameOver() == true) {
@@ -166,7 +168,9 @@ public class GameActivity extends Activity {
 				}
 			}
 
-			Toast.makeText(this, getResources().getString(R.string.game_over_message), Toast.LENGTH_LONG).show();
+			Toast.makeText(this,
+					getResources().getString(R.string.game_over_message),
+					Toast.LENGTH_LONG).show();
 			sounds.play(finishId, 0.99f, 0.99f, 0, 0, 1);
 		}
 	}

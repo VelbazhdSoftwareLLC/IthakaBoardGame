@@ -1,11 +1,43 @@
 package eu.veldsoft.ithaka.board.game;
 
+/**
+ * Single move.
+ * 
+ * @author Todor Balabanov
+ */
 class Move {
-	int startX;
-	int startY;
-	int endX;
-	int endY;
+	/**
+	 * Move x from coordinate.
+	 */
+	private int startX;
 
+	/**
+	 * Move y from coordinate.
+	 */
+	private int startY;
+
+	/**
+	 * Move x to coordinate.
+	 */
+	private int endX;
+
+	/**
+	 * Move y to coordinate.
+	 */
+	private int endY;
+
+	/**
+	 * Constructor with all parameters.
+	 * 
+	 * @param startX
+	 *            Move x from coordinate.
+	 * @param startY
+	 *            Move y from coordinate.
+	 * @param endX
+	 *            Move x to coordinate.
+	 * @param endY
+	 *            Move y to coordinate.
+	 */
 	public Move(int startX, int startY, int endX, int endY) {
 		super();
 		this.startX = startX;
@@ -14,6 +46,12 @@ class Move {
 		this.endY = endY;
 	}
 
+	/**
+	 * Copy constructor.
+	 * 
+	 * @param move
+	 *            Object to copy from.
+	 */
 	public Move(Move move) {
 		super();
 		this.startX = move.startX;
@@ -22,6 +60,45 @@ class Move {
 		this.endY = move.endY;
 	}
 
+	/**
+	 * Get from x coordinate.
+	 * 
+	 * @return From x coordinate.
+	 */
+	public int getStartX() {
+		return startX;
+	}
+
+	/**
+	 * Get from y coordinate.
+	 * 
+	 * @return From y coordinate.
+	 */
+	public int getStartY() {
+		return startY;
+	}
+
+	/**
+	 * Get to y coordinate.
+	 * 
+	 * @return To y coordinate.
+	 */
+	public int getEndX() {
+		return endX;
+	}
+
+	/**
+	 * Get to y coordinate.
+	 * 
+	 * @return To y coordinate.
+	 */
+	public int getEndY() {
+		return endY;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -33,6 +110,9 @@ class Move {
 		return result;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
