@@ -149,6 +149,13 @@ class Board {
 	private boolean hasHorizontalLine(int i, int j) {
 		Piece current = pieces[i][j];
 
+		/*
+		 * Empty lines are not possible.
+		 */
+		if (current == Piece.EMPTY) {
+			return false;
+		}
+
 		for (int k = 0; k < WIN_LINE_LENGTH; k++) {
 			/*
 			 * Keep array limits strict.
@@ -177,6 +184,13 @@ class Board {
 	private boolean hasVerticalLine(int i, int j) {
 		Piece current = pieces[i][j];
 
+		/*
+		 * Empty lines are not possible.
+		 */
+		if (current == Piece.EMPTY) {
+			return false;
+		}
+
 		for (int k = 0; k < WIN_LINE_LENGTH; k++) {
 			/*
 			 * Keep array limits strict.
@@ -204,6 +218,13 @@ class Board {
 	 */
 	private boolean hasFirstDiagonalLine(int i, int j) {
 		Piece current = pieces[i][j];
+
+		/*
+		 * Empty lines are not possible.
+		 */
+		if (current == Piece.EMPTY) {
+			return false;
+		}
 
 		for (int k = 0; k < WIN_LINE_LENGTH; k++) {
 			/*
@@ -235,6 +256,13 @@ class Board {
 	 */
 	private boolean hasSecondDiagonalLine(int i, int j) {
 		Piece current = pieces[i][j];
+
+		/*
+		 * Empty lines are not possible.
+		 */
+		if (current == Piece.EMPTY) {
+			return false;
+		}
 
 		for (int k = 0; k < WIN_LINE_LENGTH; k++) {
 			/*
