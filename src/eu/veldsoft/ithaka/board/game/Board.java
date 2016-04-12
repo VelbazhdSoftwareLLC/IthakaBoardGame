@@ -86,6 +86,13 @@ class Board {
 			return false;
 		}
 
+		/*
+		 * Destination cell should be empty.
+		 */
+		if (pieces[move.getEndX()][move.getEndY()] != Piece.EMPTY) {
+			return false;
+		}
+
 		int xStep = move.getEndX() - move.getStartX();
 		int yStep = move.getEndY() - move.getStartY();
 
@@ -96,6 +103,9 @@ class Board {
 			return false;
 		}
 
+		/*
+		 * Scale to -1, 0 or +1.
+		 */
 		if (xStep != 0) {
 			xStep /= Math.abs(xStep);
 		}
@@ -103,6 +113,7 @@ class Board {
 			yStep /= Math.abs(yStep);
 		}
 
+		// TODO Do not check correctly!
 		/*
 		 * Full path should be only empty cells.
 		 */
@@ -412,7 +423,7 @@ class Board {
 	private boolean hasOwnColorNeighbors(int x, int y) {
 		int count = 0;
 		Piece piece = pieces[x][y];
-		for (int i = x - 1; i <= y + 1; i++) {
+		for (int i = x - 1; i <= x + 1; i++) {
 			if (i < 0 || i >= COLS) {
 				continue;
 			}
@@ -450,7 +461,7 @@ class Board {
 		 */
 		if (hasSelection() == true) {
 			/*
-			 * Pice can be moved only in the empty cell.
+			 * Piece can be moved only in the empty cell.
 			 */
 			if (pieces[x][y] != Piece.EMPTY) {
 				unselect();

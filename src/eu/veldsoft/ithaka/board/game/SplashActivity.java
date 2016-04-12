@@ -10,12 +10,26 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+/**
+ * Initial product screen with ads.
+ * 
+ * @author Todor Balabanov
+ */
 public class SplashActivity extends Activity {
 
+	/**
+	 * Timeout to switch to product functional screens.
+	 */
 	private long timeout = 0L;
 
+	/**
+	 * Screen to load after the ad timeout.
+	 */
 	private String redirect = "";
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,10 +79,16 @@ public class SplashActivity extends Activity {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
 
+		/*
+		 * On resume there is no need to show the ads.
+		 */
 		new Timer().schedule(new TimerTask() {
 			public void run() {
 				try {
