@@ -1,5 +1,7 @@
 package eu.veldsoft.ithaka.board.game;
 
+import java.util.Date;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -40,6 +42,8 @@ public class GameActivity extends Activity {
 	 */
 	private int finishId = -1;
 
+	//TODO Add wrong move sound.
+	
 	/**
 	 * Helping two-dimensional array with references to the image views.
 	 */
@@ -121,10 +125,8 @@ public class GameActivity extends Activity {
 
 				updateViews();
 			} else {
-				System.err.println("Test piont 12 ...");
 				board.next();
 			}
-			System.err.println("Test piont 13 ...");
 		}
 	};
 

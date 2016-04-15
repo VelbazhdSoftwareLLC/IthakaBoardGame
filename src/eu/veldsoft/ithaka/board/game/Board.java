@@ -87,6 +87,13 @@ class Board {
 		}
 
 		/*
+		 * Starting cell should not be empty.
+		 */
+		if (pieces[move.getStartX()][move.getStartY()] == Piece.EMPTY) {
+			return false;
+		}
+
+		/*
 		 * Destination cell should be empty.
 		 */
 		if (pieces[move.getEndX()][move.getEndY()] != Piece.EMPTY) {
@@ -117,8 +124,8 @@ class Board {
 		/*
 		 * Full path should be only empty cells.
 		 */
-		for (int i = move.getStartX() + xStep, j = move.getStartY() + yStep; i != move
-				.getEndX() && j != move.getEndY(); i += xStep, j += yStep) {
+		for (int i = move.getStartX() + xStep, j = move.getStartY() + yStep; (i == move
+				.getEndX() && j == move.getEndY()) == false; i += xStep, j += yStep) {
 			if (pieces[i][j] != Piece.EMPTY) {
 				return false;
 			}
@@ -423,6 +430,14 @@ class Board {
 	private boolean hasOwnColorNeighbors(int x, int y) {
 		int count = 0;
 		Piece piece = pieces[x][y];
+		
+		/*
+		 * It is completely wrong object-oriented design EMPTY to be in the bunch of pieces.
+		 */
+		if(piece == Piece.EMPTY) {
+			return false;
+		}
+		
 		for (int i = x - 1; i <= x + 1; i++) {
 			if (i < 0 || i >= COLS) {
 				continue;

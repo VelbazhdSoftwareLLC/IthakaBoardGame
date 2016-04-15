@@ -132,4 +132,13 @@ class Move {
 			return false;
 		return true;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "Move [startX=" + startX + ", startY=" + startY + ", endX="
+				+ endX + ", endY=" + endY + "]";
+	}
 }
