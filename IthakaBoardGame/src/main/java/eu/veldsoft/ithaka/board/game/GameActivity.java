@@ -40,9 +40,12 @@ public class GameActivity extends Activity {
 	/**
 	 * Identifier of the click sound.
 	 */
-	private int finishId = -1;
+	private int wrongId = -1;
 
-	//TODO Add wrong move sound.
+	/**
+	 * Identifier of wrong click sound.
+	 */
+	private int finishId = -1;
 	
 	/**
 	 * Helping two-dimensional array with references to the image views.
@@ -167,7 +170,7 @@ public class GameActivity extends Activity {
 					if (result == true) {
 						sounds.play(clickId, 0.99f, 0.99f, 0, 0, 1);
 					} else {
-						// TODO Wrong move sound play.
+						sounds.play(wrongId, 0.99f, 0.99f, 0, 0, 1);
 					}
 				}
 			}
@@ -276,9 +279,10 @@ public class GameActivity extends Activity {
 		/*
 		 * Load sounds.
 		 */
-		sounds = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+		sounds = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
 		clickId = sounds.load(this, R.raw.schademans_pipe9, 1);
 		finishId = sounds.load(this, R.raw.game_sound_correct, 1);
+		wrongId = sounds.load(this, R.raw.cancel, 1);
 
 		/*
 		 * Load images.
