@@ -24,5 +24,10 @@ All of the pieces are shared by both players. Each player, in turn, moves one pi
 Win either by getting three pieces of one color in a row or by leaving your opponent with no available moves.
 \n\n
 The Ithaka Rules are available from the World of Abstract Games Web Site, and an Ithaka ZRF is also available for play with Zillions of Games.</string>
+    <string name="single_player_game_label">Single Player Game</string>
+    <string name="join_bluetooth_gaem_label">Join Bluetooth Game</string>
+    <string name="exit_game_label">Exit</string>
+    <string name="create_bluetooth_gaem_label">Create Bluetooth Game</string>
+    <string name="bluetooth_is_not_available">Bluetooth is not available!</string>
 
 </resources>
