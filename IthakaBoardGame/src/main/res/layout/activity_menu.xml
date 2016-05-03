@@ -19,6 +19,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/double_player_game_label"
+        android:id="@+id/double_game" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/join_bluetooth_gaem_label"
         android:id="@+id/join_game" />
 
