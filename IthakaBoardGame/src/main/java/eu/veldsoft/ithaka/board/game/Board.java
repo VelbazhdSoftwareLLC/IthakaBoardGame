@@ -11,17 +11,22 @@ class Board {
 	/**
 	 * Number of rows on the game board.
 	 */
-	static final int ROWS = 4;
+	protected static final int ROWS = 4;
 
 	/**
 	 * Number of columns on the game board.
 	 */
-	static final int COLS = 4;
+	protected static final int COLS = 4;
 
 	/**
 	 * Win line size.
 	 */
-	static final int WIN_LINE_LENGTH = 3;
+	protected static final int WIN_LINE_LENGTH = 3;
+
+	/**
+	 * Total number of players in the game.
+	 */
+	protected static final int NUMBER_OF_PLAYERS = 2;
 
 	/**
 	 * Pieces on the bard.

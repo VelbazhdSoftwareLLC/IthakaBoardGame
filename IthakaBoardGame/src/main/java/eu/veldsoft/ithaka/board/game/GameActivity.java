@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -26,6 +27,11 @@ public class GameActivity extends Activity {
 	 * UI holds the object of the game engine.
 	 */
 	private Board board = new Board();
+
+	/**
+	 * Type of game, which is played.
+	 */
+	PlayingMode mode = PlayingMode.SINGLE_PLAYER;
 
 	/**
 	 * Pool with sounds to be played.
@@ -51,6 +57,11 @@ public class GameActivity extends Activity {
 	 * Helping two-dimensional array with references to the image views.
 	 */
 	private ImageView pieces[][] = new ImageView[Board.COLS][Board.ROWS];
+
+	/**
+	 * Helping reference for who is on turn.
+	 */
+	private TextView playerOnTurn = null;
 
 	/**
 	 * Helper for the AI thread.
@@ -125,11 +136,10 @@ public class GameActivity extends Activity {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
 				}
-
-				updateViews();
 			} else {
 				board.next();
 			}
+			updateViews();
 		}
 	};
 
@@ -152,7 +162,7 @@ public class GameActivity extends Activity {
 			/*
 			 * If some other player have to play there is no move to generate.
 			 */
-			if (board.getTurn() % 2 != 0) {
+			if (mode == PlayingMode.SINGLE_PLAYER && board.getTurn() % 2 != 0) {
 				return;
 			}
 
@@ -187,12 +197,14 @@ public class GameActivity extends Activity {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
 				}
-
-				updateViews();
 			} else if (result == true && board.isTurnOver() == true) {
 				board.next();
-				handler.postDelayed(ai, 500);
+
+				if(mode == PlayingMode.SINGLE_PLAYER) {
+					handler.postDelayed(ai, 500);
+				}
 			}
+			updateViews();
 		}
 	};
 
@@ -200,6 +212,11 @@ public class GameActivity extends Activity {
 	 * Update all visual components.
 	 */
 	private void updateViews() {
+		/*
+		 * Show player turn.
+		 */
+		playerOnTurn.setText("" + getResources().getString(R.string.player_lable) + (board.getTurn() % Board.NUMBER_OF_PLAYERS + 1));
+
 		Piece values[][] = board.getPieces();
 		boolean selected[][] = board.getSelection();
 
@@ -277,12 +294,22 @@ public class GameActivity extends Activity {
 		setContentView(R.layout.activity_game);
 
 		/*
+		 * Obtain activity parameters.
+		 */
+		mode = (PlayingMode) getIntent().getSerializableExtra("mode");
+
+		/*
 		 * Load sounds.
 		 */
 		sounds = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
 		clickId = sounds.load(this, R.raw.schademans_pipe9, 1);
 		finishId = sounds.load(this, R.raw.game_sound_correct, 1);
 		wrongId = sounds.load(this, R.raw.cancel, 1);
+
+		/*
+		 * Obtain reference.
+		 */
+		playerOnTurn = (TextView) findViewById(R.id.player_on_turn);
 
 		/*
 		 * Load images.

@@ -31,6 +31,7 @@ The Ithaka Rules are available from the World of Abstract Games Web Site, and an
     <string name="bluetooth_is_not_available">Bluetooth is not available!</string>
     <string name="server_is_not_available">Server is not available!</string>
     <string name="double_player_game_label">Two Players Game</string>
-    <string name="choose_server_title">Choose Bluetooth Server:</string>
+    <string name="choose_server_title">Choose Bluetooth Server: </string>
+    <string name="player_lable">Player: </string>
 
 </resources>

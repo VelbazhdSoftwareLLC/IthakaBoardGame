@@ -43,7 +43,9 @@ public class MenuActivity extends Activity {
 				  new View.OnClickListener() {
 					  @Override
 					  public void onClick(View view) {
-						  startActivity(new Intent(MenuActivity.this, GameActivity.class));
+						  Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+						  intent.putExtra("mode", PlayingMode.SINGLE_PLAYER);
+						  startActivity(intent);
 					  }
 				  }
 		);
@@ -53,6 +55,9 @@ public class MenuActivity extends Activity {
 					  @Override
 					  public void onClick(View view) {
 						  //TODO Implement two players game on a single device.
+						  Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+						  intent.putExtra("mode", PlayingMode.TWO_PLAYERS);
+						  startActivity(intent);
 					  }
 				  }
 		);
