@@ -70,7 +70,8 @@ public class MenuActivity extends Activity {
 					  private List<CharSequence> items = null;
 
 					  @Override
-					  public void onClick(View view) {
+					  public void onClick(View view) { try{
+Toast.makeText(MenuActivity.this, "Test point 1 ...", Toast.LENGTH_SHORT).show();
 						  /*
 							* Select one of more devices.
 							*/
@@ -79,6 +80,7 @@ public class MenuActivity extends Activity {
 							  Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();
 							  return;
 						  }
+Toast.makeText(MenuActivity.this, "Test point 2 ...", Toast.LENGTH_SHORT).show();
 
 						  /*
 							* If there is no server device multiplayer game is not possible.
@@ -88,18 +90,22 @@ public class MenuActivity extends Activity {
 							  Toast.makeText(MenuActivity.this, R.string.server_is_not_available, Toast.LENGTH_SHORT).show();
 							  return;
 						  }
+Toast.makeText(MenuActivity.this, "Test point 3 ...", Toast.LENGTH_SHORT).show();
 
 						  items = new ArrayList<CharSequence>();
 						  for (BluetoothDevice d : devices) {
 							  items.add(d.getName() + " : " + d.getAddress());
 						  }
+Toast.makeText(MenuActivity.this, "Test point 4 ...", Toast.LENGTH_SHORT).show();
 
 						  /*
 							* Select devices from a dialg window.
 						   */
 						  AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
+Toast.makeText(MenuActivity.this, "Test point 4.1 ...", Toast.LENGTH_SHORT).show();
 						  builder.setTitle(R.string.choose_server_title);
-						  builder.setSingleChoiceItems((CharSequence[]) items.toArray(), -1, new DialogInterface.OnClickListener() {
+Toast.makeText(MenuActivity.this, "Test point 4.2 ...", Toast.LENGTH_SHORT).show();
+						  builder.setSingleChoiceItems(items.toArray(new CharSequence[items.size()]), -1, new DialogInterface.OnClickListener() {
 							  public void onClick(DialogInterface dialog, int index) {
 								  dialog.dismiss();
 								  int i = 0;
@@ -112,7 +118,10 @@ public class MenuActivity extends Activity {
 								  }
 							  }
 						  });
+
+Toast.makeText(MenuActivity.this, "Test point 4.3 ...", Toast.LENGTH_SHORT).show();
 						  builder.create().show();
+Toast.makeText(MenuActivity.this, "Test point 5 ...", Toast.LENGTH_SHORT).show();
 
 						  /*
 							* Client thread.
@@ -122,6 +131,7 @@ public class MenuActivity extends Activity {
 
 							  @Override
 							  public void run() {
+Toast.makeText(MenuActivity.this, "Test point 6 ...", Toast.LENGTH_SHORT).show();
 								  /*
 									* Waiting for server device to be selected.
 								   */
@@ -131,10 +141,12 @@ public class MenuActivity extends Activity {
 									  } catch (InterruptedException e) {
 									  }
 								  }
+Toast.makeText(MenuActivity.this, "Test point 7 ...", Toast.LENGTH_SHORT).show();
 
 								  try {
 									  BluetoothSocket socket = device.createRfcommSocketToServiceRecord(Util.BLUETOOTH_UUID);
 									  socket.connect();
+Toast.makeText(MenuActivity.this, "Test point 8 ...", Toast.LENGTH_SHORT).show();
 
 									  /*
 										* Connection refused by the remote server.
@@ -143,19 +155,23 @@ public class MenuActivity extends Activity {
 										  Toast.makeText(MenuActivity.this, R.string.server_is_not_available, Toast.LENGTH_SHORT).show();
 										  return;
 									  }
+Toast.makeText(MenuActivity.this, "Test point 9 ...", Toast.LENGTH_SHORT).show();
 
 									  PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 									  BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+Toast.makeText(MenuActivity.this, "Test point 10 ...", Toast.LENGTH_SHORT).show();
 
 									  boolean done = false;
 									  while (done = false) {
 										  //TODO Do the real communication.
 										  Thread.sleep(CLIENT_SLEEP_INTERVAL);
 									  }
+Toast.makeText(MenuActivity.this, "Test point 11 ...", Toast.LENGTH_SHORT).show();
 
 									  in.close();
 									  out.close();
 									  socket.close();
+Toast.makeText(MenuActivity.this, "Test point 12 ...", Toast.LENGTH_SHORT).show();
 								  } catch (IOException e) {
 									  Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();
 								  } catch (InterruptedException e) {
@@ -163,7 +179,9 @@ public class MenuActivity extends Activity {
 								  }
 							  }
 						  }).start();
-					  }
+Toast.makeText(MenuActivity.this, "Test point 13 ...", Toast.LENGTH_SHORT).show();
+}catch(Exception ex){}
+					   }
 				  }
 		);
 
