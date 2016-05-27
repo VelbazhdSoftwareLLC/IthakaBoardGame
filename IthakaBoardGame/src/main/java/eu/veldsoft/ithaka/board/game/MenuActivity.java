@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -173,11 +175,19 @@ MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 									  socket.close();
 MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 12 ...", Toast.LENGTH_SHORT).show();}});
 								  } catch (final IOException e) {
-									  MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, ""+e, Toast.LENGTH_LONG).show();}});
+			  							MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
+final StringWriter sw;
+e.printStackTrace( new PrintWriter(  sw = new StringWriter() ) );
+MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, ""+e+"\n"+sw.toString(), Toast.LENGTH_LONG).show();}});
 								  } catch (final InterruptedException e) {
 									  MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
 MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, ""+e, Toast.LENGTH_LONG).show();}});
+								  } catch (NoSuchMethodException e) {
+									  e.printStackTrace();
+								  } catch (IllegalAccessException e) {
+									  e.printStackTrace();
+								  } catch (InvocationTargetException e) {
+									  e.printStackTrace();
 								  }
 							  }
 						  }).start();
