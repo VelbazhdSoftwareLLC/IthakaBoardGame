@@ -19,12 +19,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
+
+import eu.veldsoft.ithaka.board.game.model.PlayingMode;
+import eu.veldsoft.ithaka.board.game.model.Util;
 
 /**
  * Lobby menu screen.

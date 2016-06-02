@@ -1,4 +1,4 @@
-package eu.veldsoft.ithaka.board.game;
+package eu.veldsoft.ithaka.board.game.model;
 
 import java.util.Vector;
 
@@ -7,16 +7,16 @@ import java.util.Vector;
  * 
  * @author Todor Balabanov
  */
-class Board {
+public class Board {
 	/**
 	 * Number of rows on the game board.
 	 */
-	protected static final int ROWS = 4;
+	public static final int ROWS = 4;
 
 	/**
 	 * Number of columns on the game board.
 	 */
-	protected static final int COLS = 4;
+	public static final int COLS = 4;
 
 	/**
 	 * Win line size.
@@ -26,7 +26,7 @@ class Board {
 	/**
 	 * Total number of players in the game.
 	 */
-	protected static final int NUMBER_OF_PLAYERS = 2;
+	public static final int NUMBER_OF_PLAYERS = 2;
 
 	/**
 	 * Pieces on the bard.

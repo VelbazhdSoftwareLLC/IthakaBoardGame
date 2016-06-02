@@ -1,7 +1,5 @@
 package eu.veldsoft.ithaka.board.game;
 
-import java.util.Date;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -15,6 +13,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import eu.veldsoft.ithaka.board.game.model.Board;
+import eu.veldsoft.ithaka.board.game.model.Move;
+import eu.veldsoft.ithaka.board.game.model.Piece;
+import eu.veldsoft.ithaka.board.game.model.PlayingMode;
+import eu.veldsoft.ithaka.board.game.model.Util;
 
 /**
  * Main application screen.

@@ -1,11 +1,11 @@
-package eu.veldsoft.ithaka.board.game;
+package eu.veldsoft.ithaka.board.game.model;
 
 /**
  * Single move.
  * 
  * @author Todor Balabanov
  */
-class Move {
+public class Move {
 	/**
 	 * Move x from coordinate.
 	 */
