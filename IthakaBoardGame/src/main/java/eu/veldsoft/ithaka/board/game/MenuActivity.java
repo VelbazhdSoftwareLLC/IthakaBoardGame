@@ -131,7 +131,6 @@ public class MenuActivity extends Activity {
 
 							  @Override
 							  public void run() {
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 5 ...", Toast.LENGTH_SHORT).show();}});
 								  /*
 									* Waiting for server device to be selected.
 								   */
@@ -141,14 +140,11 @@ MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 									  } catch (InterruptedException e) {
 									  }
 								  }
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 6 ...", Toast.LENGTH_SHORT).show();}});
 
 								  try {
-									  BluetoothSocket socket = device.createRfcommSocketToServiceRecord(Util.BLUETOOTH_UUID);
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 7 ...", Toast.LENGTH_SHORT).show();}});
+									  BluetoothSocket socket = device.createInsecureRfcommSocketToServiceRecord(Util.BLUETOOTH_UUID);
 										//TODO socket.isConnected()
 									  socket.connect();
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 8 ...", Toast.LENGTH_SHORT).show();}});
 
 									  /*
 										* Connection refused by the remote server.
@@ -157,41 +153,32 @@ MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 										  Toast.makeText(MenuActivity.this, R.string.server_is_not_available, Toast.LENGTH_SHORT).show();
 										  return;
 									  }
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 9 ...", Toast.LENGTH_SHORT).show();}});
 
 									  PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 									  BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 10 ...", Toast.LENGTH_SHORT).show();}});
 
 									  boolean done = false;
-									  while (done = false) {
+									  while (done == false) {
 										  //TODO Do the real communication.
+										  out.println("Hello!");
+										  out.flush();
+										  final String line = in.readLine();
+MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, line, Toast.LENGTH_SHORT).show();}});
+										  done = true;
+
 										  Thread.sleep(CLIENT_SLEEP_INTERVAL);
 									  }
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 11 ...", Toast.LENGTH_SHORT).show();}});
 
 									  in.close();
 									  out.close();
 									  socket.close();
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, "Test point 12 ...", Toast.LENGTH_SHORT).show();}});
 								  } catch (final IOException e) {
 			  							MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
-final StringWriter sw;
-e.printStackTrace( new PrintWriter(  sw = new StringWriter() ) );
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, ""+e+"\n"+sw.toString(), Toast.LENGTH_LONG).show();}});
 								  } catch (final InterruptedException e) {
 									  MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
-MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, ""+e, Toast.LENGTH_LONG).show();}});
-								  } catch (NoSuchMethodException e) {
-									  e.printStackTrace();
-								  } catch (IllegalAccessException e) {
-									  e.printStackTrace();
-								  } catch (InvocationTargetException e) {
-									  e.printStackTrace();
 								  }
 							  }
 						  }).start();
-Toast.makeText(MenuActivity.this, "Test point 13 ...", Toast.LENGTH_SHORT).show();
 					   }
 				  }
 		);
@@ -227,8 +214,14 @@ Toast.makeText(MenuActivity.this, "Test point 13 ...", Toast.LENGTH_SHORT).show(
 									  PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
 									  boolean done = false;
-									  while (done = false) {
+									  while (done == false) {
 										  //TODO Do the real communication.
+										  final String line = in.readLine();
+MenuActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(MenuActivity.this, line, Toast.LENGTH_SHORT).show();}});
+										  out.println("" + System.currentTimeMillis() + " " + line);
+										  out.flush();
+										  done = true;
+
 										  Thread.sleep(SERVER_SLEEP_INTERVAL);
 									  }
 
