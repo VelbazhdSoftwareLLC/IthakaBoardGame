@@ -1,6 +1,12 @@
 package eu.veldsoft.ithaka.board.game;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothServerSocket;
+import android.bluetooth.BluetoothSocket;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -13,6 +19,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import eu.veldsoft.ithaka.board.game.model.Board;
 import eu.veldsoft.ithaka.board.game.model.Move;
@@ -73,6 +89,21 @@ public class GameActivity extends Activity {
 	private final Handler handler = new Handler();
 
 	/**
+	 * It is used in client bluetooth code.
+	 */
+	private Set<BluetoothDevice> devices = null;
+
+	/**
+	 * It is used in client bluetooth code.
+	 */
+	private BluetoothDevice device = null;
+
+	/**
+	 * It is used in client bluetooth code.
+	 */
+	private List<CharSequence> items = null;
+
+	/**
 	 * AI playing thread.
 	 */
 	private Runnable ai = new Runnable() {
@@ -91,7 +122,7 @@ public class GameActivity extends Activity {
 			/*
 			 * If some other player have to play there is no move to generate.
 			 */
-			if (board.getTurn() % 2 != 1) {
+			if (board.getTurn() % board.NUMBER_OF_PLAYERS != 1) {
 				return;
 			}
 
@@ -150,7 +181,7 @@ public class GameActivity extends Activity {
 	/**
 	 * On piece click listener object.
 	 */
-	private View.OnClickListener onPiceClick = new View.OnClickListener() {
+	private View.OnClickListener onPeiceClick = new View.OnClickListener() {
 		/**
 		 * {@inheritDoc}
 		 */
@@ -166,7 +197,21 @@ public class GameActivity extends Activity {
 			/*
 			 * If some other player have to play there is no move to generate.
 			 */
-			if (mode == PlayingMode.SINGLE_PLAYER && board.getTurn() % 2 != 0) {
+			if (mode == PlayingMode.SINGLE_PLAYER && board.getTurn() % board.NUMBER_OF_PLAYERS != 0) {
+				return;
+			}
+
+			/*
+			 * Match client in multiplayer mode.
+			 */
+			if (mode == PlayingMode.CLIENT_MULTIPLAYER && board.getTurn() % board.NUMBER_OF_PLAYERS != 0) {
+				return;
+			}
+
+			/*
+			 * Match server in multiplayer mode.
+			 */
+			if (mode == PlayingMode.SERVER_MULTIPLAYER && board.getTurn() % board.NUMBER_OF_PLAYERS != 1) {
 				return;
 			}
 
@@ -290,6 +335,173 @@ public class GameActivity extends Activity {
 	}
 
 	/**
+	 * On create helper function for client bluetooth functions.
+	 */
+	private void onClientCreate() {
+	  /*
+		* Select one of more devices.
+		*/
+		final BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+		if (adapter == null) {
+			Toast.makeText(GameActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();
+			return;
+		}
+
+	  /*
+		* If there is no server device multiplayer game is not possible.
+		*/
+		devices = adapter.getBondedDevices();
+		if (devices.size() <= 0) {
+			Toast.makeText(GameActivity.this, R.string.server_is_not_available, Toast.LENGTH_SHORT).show();
+			return;
+		}
+
+		items = new ArrayList<CharSequence>();
+		for (BluetoothDevice d : devices) {
+			items.add(d.getName() + " : " + d.getAddress());
+		}
+
+	  /*
+		* Select devices from a dialg window.
+		*/
+		AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
+		builder.setTitle(R.string.choose_server_title);
+		builder.setSingleChoiceItems(items.toArray(new CharSequence[items.size()]), -1, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int index) {
+				dialog.dismiss();
+				int i = 0;
+				for (BluetoothDevice d : devices) {
+					if (i == index) {
+						device = d;
+						break;
+					}
+					i++;
+				}
+				//TODO Move the thread here.
+			}
+		});
+
+		builder.create().show();
+
+	  /*
+		* Just in case.
+		*/
+		adapter.cancelDiscovery();
+
+	  /*
+		* Client thread.
+		*/
+		new Thread(new Runnable() {
+			private final static long CLIENT_SLEEP_INTERVAL = 100;
+
+			@Override
+			public void run() {
+			  /*
+				* Waiting for server device to be selected.
+				*/
+				while (device == null) {
+					try {
+						Thread.sleep(300);
+					} catch (InterruptedException e) {
+					}
+				}
+
+				try {
+					BluetoothSocket socket = device.createInsecureRfcommSocketToServiceRecord(Util.BLUETOOTH_UUID);
+					//TODO socket.isConnected()
+					socket.connect();
+
+				  /*
+					* Connection refused by the remote server.
+					*/
+					if (socket == null) {
+						Toast.makeText(GameActivity.this, R.string.server_is_not_available, Toast.LENGTH_SHORT).show();
+						return;
+					}
+
+					PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
+					BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+					boolean done = false;
+					while (done == false) {
+						//TODO Do the real communication.
+						out.println("Hello!");
+						out.flush();
+						final String line = in.readLine();
+GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, line, Toast.LENGTH_SHORT).show();}});
+						done = true;
+
+						Thread.sleep(CLIENT_SLEEP_INTERVAL);
+					}
+
+					in.close();
+					out.close();
+					socket.close();
+				} catch (final IOException e) {
+					GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
+				} catch (final InterruptedException e) {
+					GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();}});
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * On create helper function for server bluetooth functions.
+	 */
+	private void onServerCreate() {
+		final BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+		if (adapter == null) {
+			Toast.makeText(GameActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();
+			return;
+		}
+
+	  /*
+		* Just in case.
+		*/
+		adapter.cancelDiscovery();
+
+	  /*
+		* Server thread.
+		*/
+		new Thread(new Runnable() {
+			private final static long SERVER_SLEEP_INTERVAL = 100;
+
+			@Override
+			public void run() {
+				BluetoothSocket socket = null;
+				try {
+					BluetoothServerSocket server = adapter.listenUsingRfcommWithServiceRecord(Util.BLUETOOTH_NAME, Util.BLUETOOTH_UUID);
+					socket = server.accept();
+					BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+					PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
+
+					boolean done = false;
+					while (done == false) {
+						//TODO Do the real communication.
+						final String line = in.readLine();
+GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, line, Toast.LENGTH_SHORT).show();}});
+						out.println("" + System.currentTimeMillis() + " " + line);
+						out.flush();
+						done = true;
+
+						Thread.sleep(SERVER_SLEEP_INTERVAL);
+					}
+
+					out.close();
+					in.close();
+					socket.close();
+					server.close();
+				} catch (IOException e) {
+					Toast.makeText(GameActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();
+				} catch (InterruptedException e) {
+					Toast.makeText(GameActivity.this, R.string.bluetooth_is_not_available, Toast.LENGTH_SHORT).show();
+				}
+			}
+		}).start();
+	}
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -340,11 +552,21 @@ public class GameActivity extends Activity {
 		 */
 		for (int i = 0; i < pieces.length; i++) {
 			for (int j = 0; j < pieces[i].length; j++) {
-				pieces[i][j].setOnClickListener(onPiceClick);
+				pieces[i][j].setOnClickListener(onPeiceClick);
 			}
 		}
 
 		board.reset();
+
+		switch(mode) {
+			case CLIENT_MULTIPLAYER:
+				onClientCreate();
+				break;
+			case SERVER_MULTIPLAYER:
+				onServerCreate();
+				break;
+		}
+
 		updateViews();
 	}
 
