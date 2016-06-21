@@ -307,6 +307,49 @@ public class Board {
 	}
 
 	/**
+	 * Check for neighbors with the same color.
+	 *
+	 * @param x
+	 *            Piece x coordinate.
+	 * @param y
+	 *            Piece y coordinate.
+	 * @return True if it has neighbors from the same color, false otherwise.
+	 */
+	private boolean hasOwnColorNeighbors(int x, int y) {
+		int count = 0;
+		Piece piece = pieces[x][y];
+
+		/*
+		 * It is completely wrong object-oriented design EMPTY to be in the bunch of pieces.
+		 */
+		if(piece == Piece.EMPTY) {
+			return false;
+		}
+
+		for (int i = x - 1; i <= x + 1; i++) {
+			if (i < 0 || i >= COLS) {
+				continue;
+			}
+
+			for (int j = y - 1; j <= y + 1; j++) {
+				if (j < 0 || j >= ROWS) {
+					continue;
+				}
+
+				if (piece == pieces[i][j]) {
+					count++;
+				}
+			}
+		}
+
+		if (count <= 1) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Turn getter.
 	 * 
 	 * @return Turn as number.
@@ -382,6 +425,20 @@ public class Board {
 	}
 
 	/**
+	 * Last move coordinates getter.\
+	 *
+	 * @return String representation of the last move coordinates.
+	 */
+	public String lastMoveCoordiantes() {
+		if(moves.size() == 0) {
+			return "";
+		}
+
+		Move move = moves.lastElement();
+		return "" + move.getStartX() + " " + move.getStartY() + " " + move.getEndX() + " " + move.getEndY();
+	}
+
+	/**
 	 * Reset the board in the initial conditions.
 	 */
 	public void reset() {
@@ -404,7 +461,7 @@ public class Board {
 	/**
 	 * Check the piece on the specific coordinates for participation in the last
 	 * move.
-	 * 
+	 *
 	 * @param x
 	 *            Piece x coordinate.
 	 * @param y
@@ -421,49 +478,6 @@ public class Board {
 		}
 
 		return false;
-	}
-
-	/**
-	 * Check for neighbors with the same color.
-	 * 
-	 * @param x
-	 *            Piece x coordinate.
-	 * @param y
-	 *            Piece y coordinate.
-	 * @return True if it has neighbors from the same color, false otherwise.
-	 */
-	private boolean hasOwnColorNeighbors(int x, int y) {
-		int count = 0;
-		Piece piece = pieces[x][y];
-		
-		/*
-		 * It is completely wrong object-oriented design EMPTY to be in the bunch of pieces.
-		 */
-		if(piece == Piece.EMPTY) {
-			return false;
-		}
-		
-		for (int i = x - 1; i <= x + 1; i++) {
-			if (i < 0 || i >= COLS) {
-				continue;
-			}
-
-			for (int j = y - 1; j <= y + 1; j++) {
-				if (j < 0 || j >= ROWS) {
-					continue;
-				}
-
-				if (piece == pieces[i][j]) {
-					count++;
-				}
-			}
-		}
-
-		if (count <= 1) {
-			return false;
-		}
-
-		return true;
 	}
 
 	/**
@@ -557,6 +571,7 @@ public class Board {
 	 * Increment turn counter.
 	 */
 	public void next() {
+		//TODO Maby turn over flag shoul go in false here.
 		turn++;
 	}
 

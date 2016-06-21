@@ -30,7 +30,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" afterPath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
     </list>
     <ignored path="IthakaBoardGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,17 +62,10 @@
         <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <caret line="82" column="74" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="74" />
               <folding>
-                <element signature="e#1176#1444#0" expanded="true" />
-                <element signature="e#1443#1444#0" expanded="true" />
-                <element signature="e#1521#1787#0" expanded="true" />
-                <element signature="e#1786#1787#0" expanded="true" />
+                <element signature="e#1971#2245#0" expanded="true" />
                 <element signature="e#2244#2245#0" expanded="true" />
-                <element signature="e#2322#2595#0" expanded="true" />
-                <element signature="e#2594#2595#0" expanded="true" />
-                <element signature="e#2670#2808#0" expanded="true" />
-                <element signature="e#2807#2808#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,8 +74,8 @@
       <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24094203">
-              <caret line="470" column="28" selection-start-line="470" selection-start-column="28" selection-end-line="470" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.5787631">
+              <caret line="509" column="28" selection-start-line="509" selection-start-column="24" selection-end-line="509" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5675#5722#0" expanded="true" />
@@ -90,16 +83,35 @@
                 <element signature="e#7686#7721#0" expanded="true" />
                 <element signature="e#7951#7983#0" expanded="true" />
                 <element signature="e#8311#8339#0" expanded="true" />
-                <element signature="e#8424#8719#0" expanded="true" />
-                <element signature="e#8718#8719#0" expanded="true" />
                 <element signature="e#9447#9479#0" expanded="true" />
-                <element signature="e#10354#10389#0" expanded="true" />
-                <element signature="e#10584#10619#0" expanded="true" />
-                <element signature="e#10922#10957#0" expanded="true" />
-                <element signature="e#11794#11908#0" expanded="true" />
-                <element signature="e#11907#11908#0" expanded="true" />
-                <element signature="e#12212#12247#0" expanded="true" />
-                <element signature="e#12355#12390#0" expanded="true" />
+                <element signature="e#10018#10132#0" expanded="true" />
+                <element signature="e#10131#10132#0" expanded="true" />
+                <element signature="e#10466#10611#0" expanded="true" />
+                <element signature="e#10545#10580#0" expanded="true" />
+                <element signature="e#10610#10611#0" expanded="true" />
+                <element signature="e#10696#10841#0" expanded="true" />
+                <element signature="e#10775#10810#0" expanded="true" />
+                <element signature="e#10840#10841#0" expanded="true" />
+                <element signature="e#11113#11148#0" expanded="true" />
+                <element signature="e#12258#12351#0" expanded="true" />
+                <element signature="e#12350#12351#0" expanded="true" />
+                <element signature="e#12469#12562#0" expanded="true" />
+                <element signature="e#12561#12562#0" expanded="true" />
+                <element signature="e#13017#13052#0" expanded="true" />
+                <element signature="e#13160#13195#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="561" column="20" selection-start-line="561" selection-start-column="12" selection-end-line="561" selection-end-column="20" />
+              <folding>
+                <element signature="e#7361#7362#0" expanded="true" />
+                <element signature="e#7383#7384#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1675,9 +1687,9 @@
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_game.xml" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/PlayingMode.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/PlayingMode.java" />
-        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" />
+        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
       </list>
     </option>
   </component>
@@ -2167,7 +2179,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.497006" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3141243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3141243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.502994" order="7" side_tool="true" content_ui="tabs" />
@@ -2188,7 +2201,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2213,17 +2225,10 @@
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2239,16 +2244,64 @@
             <element signature="e#7686#7721#0" expanded="true" />
             <element signature="e#7951#7983#0" expanded="true" />
             <element signature="e#8311#8339#0" expanded="true" />
-            <element signature="e#8424#8719#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
             <element signature="e#9447#9479#0" expanded="true" />
-            <element signature="e#10354#10389#0" expanded="true" />
-            <element signature="e#10584#10619#0" expanded="true" />
-            <element signature="e#10922#10957#0" expanded="true" />
-            <element signature="e#11794#11908#0" expanded="true" />
-            <element signature="e#11907#11908#0" expanded="true" />
-            <element signature="e#12212#12247#0" expanded="true" />
-            <element signature="e#12355#12390#0" expanded="true" />
+            <element signature="e#10018#10132#0" expanded="true" />
+            <element signature="e#10131#10132#0" expanded="true" />
+            <element signature="e#10466#10611#0" expanded="true" />
+            <element signature="e#10545#10580#0" expanded="true" />
+            <element signature="e#10610#10611#0" expanded="true" />
+            <element signature="e#10696#10841#0" expanded="true" />
+            <element signature="e#10775#10810#0" expanded="true" />
+            <element signature="e#10840#10841#0" expanded="true" />
+            <element signature="e#11113#11148#0" expanded="true" />
+            <element signature="e#12258#12351#0" expanded="true" />
+            <element signature="e#12350#12351#0" expanded="true" />
+            <element signature="e#12469#12562#0" expanded="true" />
+            <element signature="e#12561#12562#0" expanded="true" />
+            <element signature="e#13017#13052#0" expanded="true" />
+            <element signature="e#13160#13195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1971#2245#0" expanded="true" />
+            <element signature="e#2244#2245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5675#5722#0" expanded="true" />
+            <element signature="e#7218#7270#0" expanded="true" />
+            <element signature="e#7686#7721#0" expanded="true" />
+            <element signature="e#7951#7983#0" expanded="true" />
+            <element signature="e#8311#8339#0" expanded="true" />
+            <element signature="e#9447#9479#0" expanded="true" />
+            <element signature="e#10018#10132#0" expanded="true" />
+            <element signature="e#10131#10132#0" expanded="true" />
+            <element signature="e#10466#10611#0" expanded="true" />
+            <element signature="e#10545#10580#0" expanded="true" />
+            <element signature="e#10610#10611#0" expanded="true" />
+            <element signature="e#10696#10841#0" expanded="true" />
+            <element signature="e#10775#10810#0" expanded="true" />
+            <element signature="e#10840#10841#0" expanded="true" />
+            <element signature="e#11113#11148#0" expanded="true" />
+            <element signature="e#12258#12351#0" expanded="true" />
+            <element signature="e#12350#12351#0" expanded="true" />
+            <element signature="e#12469#12562#0" expanded="true" />
+            <element signature="e#12561#12562#0" expanded="true" />
+            <element signature="e#13017#13052#0" expanded="true" />
+            <element signature="e#13160#13195#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2266,15 +2319,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2284,15 +2330,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2302,15 +2341,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2320,15 +2352,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2338,15 +2363,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2356,15 +2374,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2374,15 +2385,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2392,15 +2396,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2410,15 +2407,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2438,23 +2428,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_menu.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_game.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_game.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.78731346">
           <caret line="176" column="17" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/res/values/strings.xml">
@@ -2517,14 +2507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42123687">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/PlayingMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22170362">
@@ -2536,25 +2518,29 @@
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <caret line="82" column="74" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="74" />
           <folding>
-            <element signature="e#1176#1444#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1521#1787#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1971#2245#0" expanded="true" />
             <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2322#2595#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2670#2808#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="561" column="20" selection-start-line="561" selection-start-column="12" selection-end-line="561" selection-end-column="20" />
+          <folding>
+            <element signature="e#7361#7362#0" expanded="true" />
+            <element signature="e#7383#7384#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24094203">
-          <caret line="470" column="28" selection-start-line="470" selection-start-column="28" selection-end-line="470" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.5787631">
+          <caret line="509" column="28" selection-start-line="509" selection-start-column="24" selection-end-line="509" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5675#5722#0" expanded="true" />
@@ -2562,16 +2548,22 @@
             <element signature="e#7686#7721#0" expanded="true" />
             <element signature="e#7951#7983#0" expanded="true" />
             <element signature="e#8311#8339#0" expanded="true" />
-            <element signature="e#8424#8719#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
             <element signature="e#9447#9479#0" expanded="true" />
-            <element signature="e#10354#10389#0" expanded="true" />
-            <element signature="e#10584#10619#0" expanded="true" />
-            <element signature="e#10922#10957#0" expanded="true" />
-            <element signature="e#11794#11908#0" expanded="true" />
-            <element signature="e#11907#11908#0" expanded="true" />
-            <element signature="e#12212#12247#0" expanded="true" />
-            <element signature="e#12355#12390#0" expanded="true" />
+            <element signature="e#10018#10132#0" expanded="true" />
+            <element signature="e#10131#10132#0" expanded="true" />
+            <element signature="e#10466#10611#0" expanded="true" />
+            <element signature="e#10545#10580#0" expanded="true" />
+            <element signature="e#10610#10611#0" expanded="true" />
+            <element signature="e#10696#10841#0" expanded="true" />
+            <element signature="e#10775#10810#0" expanded="true" />
+            <element signature="e#10840#10841#0" expanded="true" />
+            <element signature="e#11113#11148#0" expanded="true" />
+            <element signature="e#12258#12351#0" expanded="true" />
+            <element signature="e#12350#12351#0" expanded="true" />
+            <element signature="e#12469#12562#0" expanded="true" />
+            <element signature="e#12561#12562#0" expanded="true" />
+            <element signature="e#13017#13052#0" expanded="true" />
+            <element signature="e#13160#13195#0" expanded="true" />
           </folding>
         </state>
       </provider>

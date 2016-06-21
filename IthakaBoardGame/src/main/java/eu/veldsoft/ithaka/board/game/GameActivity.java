@@ -422,14 +422,22 @@ public class GameActivity extends Activity {
 					PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 					BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
+					//TODO Do the real communication
 					boolean done = false;
 					while (done == false) {
-						//TODO Do the real communication.
-						out.println("Hello!");
-						out.flush();
-						final String line = in.readLine();
+						if (board.isTurnOver() == true) {
+							out.println(board.lastMoveCoordiantes());
+							out.flush();
+							final String line = in.readLine();
 GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, line, Toast.LENGTH_SHORT).show();}});
-						done = true;
+						}
+
+						/*
+						 * When the game is over stop the communication.
+						 */
+						if(board.isGameOver() == true) {
+							done = true;
+						}
 
 						Thread.sleep(CLIENT_SLEEP_INTERVAL);
 					}
@@ -480,10 +488,36 @@ GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 					while (done == false) {
 						//TODO Do the real communication.
 						final String line = in.readLine();
-GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, line, Toast.LENGTH_SHORT).show();}});
-						out.println("" + System.currentTimeMillis() + " " + line);
-						out.flush();
-						done = true;
+						String tokens[] = line.split("\\s+");
+
+						//TODO If there is no 4 integer numbers used as coordinates do something smarter.
+						if(tokens.length != 4) {
+							continue;
+						}
+
+						board.click(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+						GameActivity.this.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								updateViews();
+							}});
+						board.click(Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]));
+						GameActivity.this.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								updateViews();
+							}});
+						board.next();
+
+						if(board.isTurnOver() == true) {
+							//TODO Send server move.
+							out.println("" + System.currentTimeMillis() + " " + line);
+							out.flush();
+						}
+
+						if(board.isGameOver() == true) {
+							done = true;
+						}
 
 						Thread.sleep(SERVER_SLEEP_INTERVAL);
 					}
