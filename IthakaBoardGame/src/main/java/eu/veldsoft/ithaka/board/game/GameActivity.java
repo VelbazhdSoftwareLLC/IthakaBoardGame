@@ -425,12 +425,44 @@ public class GameActivity extends Activity {
 					//TODO Do the real communication
 					boolean done = false;
 					while (done == false) {
-						if (board.isTurnOver() == true) {
-							out.println(board.lastMoveCoordiantes());
-							out.flush();
-							final String line = in.readLine();
-GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toast.makeText(GameActivity.this, line, Toast.LENGTH_SHORT).show();}});
+						/*
+						 * Wait for the human player to play.
+						 */
+						if (board.isTurnOver() == false) {
+							Thread.sleep(CLIENT_SLEEP_INTERVAL);
+							continue;
 						}
+
+						out.println(board.lastMoveCoordiantes());
+						out.flush();
+
+						String tokens[] = {};
+						do {
+							Thread.sleep(CLIENT_SLEEP_INTERVAL);
+							final String line = in.readLine();
+							tokens = line.split("\\s+");
+						} while(tokens.length != 4);
+						//TODO If there is no 4 integer numbers used as coordinates do something smarter.
+
+						board.click(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+						GameActivity.this.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								updateViews();
+							}});
+						board.click(Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]));
+						GameActivity.this.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								updateViews();
+							}});
+						board.turnFinish();
+						board.next();
+						GameActivity.this.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								updateViews();
+							}});
 
 						/*
 						 * When the game is over stop the communication.
@@ -438,9 +470,12 @@ GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 						if(board.isGameOver() == true) {
 							done = true;
 						}
-
-						Thread.sleep(CLIENT_SLEEP_INTERVAL);
 					}
+					GameActivity.this.runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							updateViews();
+						}});
 
 					in.close();
 					out.close();
@@ -492,6 +527,7 @@ GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 
 						//TODO If there is no 4 integer numbers used as coordinates do something smarter.
 						if(tokens.length != 4) {
+							Thread.sleep(SERVER_SLEEP_INTERVAL);
 							continue;
 						}
 
@@ -507,20 +543,33 @@ GameActivity.this.runOnUiThread(new Runnable() {@Override public void run() {Toa
 							public void run() {
 								updateViews();
 							}});
+						board.turnFinish();
 						board.next();
+						GameActivity.this.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								updateViews();
+							}});
 
-						if(board.isTurnOver() == true) {
-							//TODO Send server move.
-							out.println("" + System.currentTimeMillis() + " " + line);
-							out.flush();
+						/*
+						 * Wait for the human player to play.
+						 */
+						while(board.isTurnOver() == false) {
+							Thread.sleep(SERVER_SLEEP_INTERVAL);
 						}
+
+						out.println(board.lastMoveCoordiantes());
+						out.flush();
 
 						if(board.isGameOver() == true) {
 							done = true;
 						}
-
-						Thread.sleep(SERVER_SLEEP_INTERVAL);
 					}
+					GameActivity.this.runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							updateViews();
+						}});
 
 					out.close();
 					in.close();

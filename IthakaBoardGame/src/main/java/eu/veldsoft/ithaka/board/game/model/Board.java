@@ -568,10 +568,16 @@ public class Board {
 	}
 
 	/**
+	 * Steps needed to finish the turn.
+	 */
+	public void turnFinish() {
+		turnOver = false;
+	}
+
+	/**
 	 * Increment turn counter.
 	 */
 	public void next() {
-		//TODO Maby turn over flag shoul go in false here.
 		turn++;
 	}
 
