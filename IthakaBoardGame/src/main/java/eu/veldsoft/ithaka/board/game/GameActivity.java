@@ -35,6 +35,8 @@ import eu.veldsoft.ithaka.board.game.model.Move;
 import eu.veldsoft.ithaka.board.game.model.Piece;
 import eu.veldsoft.ithaka.board.game.model.PlayingMode;
 import eu.veldsoft.ithaka.board.game.model.Util;
+import eu.veldsoft.ithaka.board.game.model.ai.ArtificialIntelligence;
+import eu.veldsoft.ithaka.board.game.model.ai.RandomArtificialIntelligence;
 
 /**
  * Main application screen.
@@ -52,6 +54,11 @@ public class GameActivity extends Activity {
 	 * Type of game, which is played.
 	 */
 	PlayingMode mode = PlayingMode.SINGLE_PLAYER;
+
+	/**
+	 * Array with bots.
+	 */
+	private ArtificialIntelligence bots[] = {};
 
 	/**
 	 * Pool with sounds to be played.
@@ -138,10 +145,11 @@ public class GameActivity extends Activity {
 			 */
 			Move move = null;
 			do {
-				move = new Move(Util.PRNG.nextInt(Board.COLS),
-						Util.PRNG.nextInt(Board.ROWS),
-						Util.PRNG.nextInt(Board.COLS),
-						Util.PRNG.nextInt(Board.ROWS));
+				move = new Move(
+						  Util.PRNG.nextInt(Board.COLS),
+						  Util.PRNG.nextInt(Board.ROWS),
+						  Util.PRNG.nextInt(Board.COLS),
+						  Util.PRNG.nextInt(Board.ROWS));
 			} while (board.isValid(move) == false);
 
 			/*
@@ -596,6 +604,13 @@ public class GameActivity extends Activity {
 		 * Obtain activity parameters.
 		 */
 		mode = (PlayingMode) getIntent().getSerializableExtra("mode");
+
+		/*
+		 * Create bot objects.
+		 */
+		bots = new ArtificialIntelligence[] {
+				  new RandomArtificialIntelligence(),
+				  new RandomArtificialIntelligence(), };
 
 		/*
 		 * Load sounds.
