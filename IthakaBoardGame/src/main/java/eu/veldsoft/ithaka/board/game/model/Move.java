@@ -96,6 +96,36 @@ public class Move {
 		return endY;
 	}
 
+
+	/**
+	 * Provide binary encoding of the move.
+	 *
+	 * @return String representation of the binary encoding.
+	 */
+	public Long toBinary() {
+		return (long)(startX*Board.COLS+startY) << 16 | (long)(endX*Board.COLS+endY);
+	}
+
+	/**
+	 * Provide move object from binary encoding.
+	 *
+	 * @param binary Binary representation of the board.
+	 *
+	 * @return Board object.
+	 */
+	public Move fromBinary(long binary) {
+		long start = (binary >> 16) & 0xFFFF;
+		long end = binary & 0xFFFF;
+
+		startX = (int) (start / Board.COLS);
+		startY = (int) (start % Board.COLS);
+
+		endX = (int) (end / Board.COLS);
+		endY = (int) (end % Board.COLS);
+
+		return this;
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -754,4 +754,41 @@ public class Board {
 
 		return winners;
 	}
+
+	/**
+	 * Provide binary encoding of the board stated.
+	 *
+	 * @return String representation of the binary encoding.
+	 */
+	public Long toBinary() {
+		long binary = 0;
+		for (int i = 0; i < pieces.length; i++) {
+			for (int j = 0; j < pieces[i].length; j++) {
+				binary |= pieces[i][j].getId();
+				binary <<= 3;
+			}
+		}
+
+		return binary;
+	}
+
+	/**
+	 * Provide board object from binary encoding.
+	 *
+	 * @param binary Binary representation of the board.
+	 *
+	 * @return Board object.
+	 */
+	public Board fromBinary(long binary) {
+		final long mask = 0x7;
+
+		for (int i = pieces.length-1; i >=0; i--) {
+			for (int j = pieces[i].length-1; j >= 0; j--) {
+				pieces[i][j] = Piece.valueOf(binary & mask);
+				binary >>= 3;
+			}
+		}
+
+		return this;
+	}
 }
