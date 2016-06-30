@@ -48,16 +48,29 @@ public class Move {
 
 	/**
 	 * Copy constructor.
+	 *
+	 * @param coordinates
+	 *            Object to copy from.
+	 */
+	public Move(int coordinates[]) throws RuntimeException {
+		if(coordinates == null || coordinates.length != 4) {
+			throw new RuntimeException("Invalide coordinates!");
+		}
+
+		startX = coordinates[0];
+		startY = coordinates[1];
+		endX = coordinates[2];
+		endY = coordinates[3];
+	}
+
+	/**
+	 * Copy constructor.
 	 * 
 	 * @param move
 	 *            Object to copy from.
 	 */
 	public Move(Move move) {
-		super();
-		this.startX = move.startX;
-		this.startY = move.startY;
-		this.endX = move.endX;
-		this.endY = move.endY;
+		this(move.startX, move.startY, move.endX, move.endY);
 	}
 
 	/**

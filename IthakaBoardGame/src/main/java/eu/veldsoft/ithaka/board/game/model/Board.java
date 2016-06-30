@@ -1,5 +1,7 @@
 package eu.veldsoft.ithaka.board.game.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -387,6 +389,55 @@ public class Board {
 	}
 
 	/**
+	 * Default constructor.
+	 */
+	public Board() {
+		super();
+	}
+
+	/**
+	 * Constructor for binary serialization.
+	 *
+	 * @param binary Binary representation of board state.
+	 */
+	public Board(long binary) {
+		this();
+		fromBinary(binary);
+	}
+
+	/**
+	 * Constructor for two dimensional state array.
+	 *
+	 * @param state Board state two dimensional array.
+	 */
+	public Board(int[][] state) {
+		this();
+
+		/*
+		 * Do nothing if null pointers presented and dimensions.
+		 */
+		if(state == null || state.length!=pieces.length) {
+			//TODO Rise exception.
+			return;
+		}
+		for(int i=0; i<state.length; i++) {
+			if(state[i] == null || state[i].length!=pieces[i].length) {
+				//TODO Rise exception.
+				return;
+			}
+		}
+
+		/*
+		 * Fill state content.
+		 */
+		for(int i=0; i<pieces.length; i++) {
+			for(int j=0; j<pieces[i].length; j++) {
+				pieces[i][j] = Piece.valueOf(state[i][j]);
+			}
+		}
+	}
+
+	/**
 	 * Pieces on the board getter.
 	 * 
 	 * @return Two-dimensional array with the pieces on the board.
@@ -753,6 +804,31 @@ public class Board {
 		}
 
 		return winners;
+	}
+
+	/**
+	 * Generate all valid moves for the currrent state.
+	 *
+	 * @return List of all valid moves.
+	 */
+	public List<Move> allValidMoves() {
+		List<Move> moves = new ArrayList<Move>();
+
+		for(int x1=0; x1<Board.COLS; x1++) {
+			for(int y1=0; y1<Board.ROWS; y1++) {
+				for(int x2=0; x2<Board.COLS; x2++) {
+					for(int y2=0; y2<Board.ROWS; y2++) {
+						Move move = new Move(x1, y1, x2, y2);
+
+						if(isValid(move) == true) {
+							moves.add(move);
+						}
+					}
+				}
+			}
+		}
+
+		return moves;
 	}
 
 	/**

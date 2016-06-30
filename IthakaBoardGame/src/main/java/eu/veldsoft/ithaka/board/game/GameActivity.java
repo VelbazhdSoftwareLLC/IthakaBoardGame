@@ -36,6 +36,7 @@ import eu.veldsoft.ithaka.board.game.model.Piece;
 import eu.veldsoft.ithaka.board.game.model.PlayingMode;
 import eu.veldsoft.ithaka.board.game.model.Util;
 import eu.veldsoft.ithaka.board.game.model.ai.ArtificialIntelligence;
+import eu.veldsoft.ithaka.board.game.model.ai.BruteForceArtificialIntelligence;
 import eu.veldsoft.ithaka.board.game.model.ai.RandomArtificialIntelligence;
 
 /**
@@ -44,7 +45,6 @@ import eu.veldsoft.ithaka.board.game.model.ai.RandomArtificialIntelligence;
  * @author Todor Balabanov
  */
 public class GameActivity extends Activity {
-
 	/**
 	 * UI holds the object of the game engine.
 	 */
@@ -143,14 +143,7 @@ public class GameActivity extends Activity {
 			/*
 			 * Selection of random move.
 			 */
-			Move move = null;
-			do {
-				move = new Move(
-						  Util.PRNG.nextInt(Board.COLS),
-						  Util.PRNG.nextInt(Board.ROWS),
-						  Util.PRNG.nextInt(Board.COLS),
-						  Util.PRNG.nextInt(Board.ROWS));
-			} while (board.isValid(move) == false);
+			Move move = bots[board.getTurn()%board.NUMBER_OF_PLAYERS].move(board);
 
 			/*
 			 * Do computer move.
@@ -609,8 +602,8 @@ public class GameActivity extends Activity {
 		 * Create bot objects.
 		 */
 		bots = new ArtificialIntelligence[] {
-				  new RandomArtificialIntelligence(),
-				  new RandomArtificialIntelligence(), };
+				  null,
+				  new BruteForceArtificialIntelligence(), };
 
 		/*
 		 * Load sounds.
