@@ -25,13 +25,12 @@ public class BruteForceArtificialIntelligence  extends AbstractArtificialIntelli
 	 */
 	static {
 		//TODO Build the tree in separate thread.
-		Board board = new Board();
 		List<Long> unhandled = new ArrayList<Long>();
 
 		/*
 		 * Add tree root.
 		 */
-		Long root = board.toBinary();
+		long root = (new Board()).toBinary();
 		tree.put(root, new ArrayList<Long>());
 		unhandled.add(root);
 
@@ -40,9 +39,27 @@ public class BruteForceArtificialIntelligence  extends AbstractArtificialIntelli
 		 */
 		while (unhandled.isEmpty() == false) {
 			Long node = unhandled.get(0);
+			List<Move> moves = (new Board(node)).allValidMoves();
+			for(Move move : moves) {
+				/*
+				 * Generate next state.
+				 */
+				Board board = new Board(node);
+				board.click(move.getStartX(), move.getStartY());
+				board.click(move.getEndX(), move.getEndY());
+				long state = board.toBinary();
 
-			List<Move> moves = board.allValidMoves();
-			//TODO Add as edges.
+				/*
+				 * Build a tree not a graph.
+				 */
+				if(tree.containsKey(state) == true) {
+					continue;
+				}
+
+				tree.get(node).add(move.toBinary());
+				tree.put(state, new ArrayList<Long>());
+				unhandled.add(state);
+			}
 
 			unhandled.remove(0);
 		}

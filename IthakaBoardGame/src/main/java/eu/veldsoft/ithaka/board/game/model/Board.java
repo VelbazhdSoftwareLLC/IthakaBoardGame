@@ -845,6 +845,8 @@ public class Board {
 			}
 		}
 
+		//TODO Mark last played piece.
+
 		return binary;
 	}
 
@@ -864,6 +866,8 @@ public class Board {
 				binary >>= 3;
 			}
 		}
+
+		//TODO Mark last played piece.
 
 		return this;
 	}
