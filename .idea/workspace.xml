@@ -30,8 +30,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" afterPath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java" />
     </list>
     <ignored path="IthakaBoardGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,11 +57,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BruteForceArtificialIntelligence.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TreeBuilder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15519254">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BruteForceArtificialIntelligence.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35472578">
-              <caret line="16" column="45" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1651,6 +1661,7 @@
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java" />
+        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java" />
       </list>
     </option>
   </component>
@@ -1692,7 +1703,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1713,6 +1727,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1783,9 +1811,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2150,16 +2175,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/ArtificialIntelligence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2571,8 +2586,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35472578">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15519254">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
