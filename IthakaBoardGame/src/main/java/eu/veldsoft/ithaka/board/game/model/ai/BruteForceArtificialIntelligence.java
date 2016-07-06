@@ -1,5 +1,6 @@
 package eu.veldsoft.ithaka.board.game.model.ai;
 
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,6 +64,15 @@ public class BruteForceArtificialIntelligence  extends AbstractArtificialIntelli
 
 			unhandled.remove(0);
 		}
+	}
+
+	/**
+	 * Store in a stream generated game tree.
+	 *
+	 * @param out Output stream object.
+	 */
+	public static void storeTree(OutputStream out) {
+		//TODO Store game tree.
 	}
 
 	/**
