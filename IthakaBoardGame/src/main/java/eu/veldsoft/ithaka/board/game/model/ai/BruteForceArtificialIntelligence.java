@@ -59,7 +59,10 @@ public class BruteForceArtificialIntelligence  extends AbstractArtificialIntelli
 
 				tree.get(node).add(move.toBinary());
 				tree.put(state, new ArrayList<Long>());
-				unhandled.add(state);
+
+				if(board.hasWinner() == false) {
+					unhandled.add(state);
+				}
 			}
 
 			unhandled.remove(0);

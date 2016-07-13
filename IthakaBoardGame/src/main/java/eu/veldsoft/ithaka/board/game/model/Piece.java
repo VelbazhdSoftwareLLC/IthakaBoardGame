@@ -52,4 +52,12 @@ public enum Piece {
 	public int getId() {
 		return id;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "" + id;
+	}
 }

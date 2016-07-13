@@ -6,7 +6,7 @@ import java.util.Vector;
 
 /**
  * Object-oriented representation of the game board.
- * 
+ *
  * @author Todor Balabanov
  */
 public class Board {
@@ -79,7 +79,7 @@ public class Board {
 
 	/**
 	 * Check for available path for piece traveling during the turn.
-	 * 
+	 *
 	 * @param move
 	 *            Move to be checked.
 	 * @return True if the path is available, false otherwise.
@@ -143,7 +143,7 @@ public class Board {
 
 	/**
 	 * Form move from the selected cell and destination coordinates.
-	 * 
+	 *
 	 * @param x
 	 *            Destination x coordinate.
 	 * @param y
@@ -164,7 +164,7 @@ public class Board {
 
 	/**
 	 * Check for straight horizontal line.
-	 * 
+	 *
 	 * @param i
 	 *            Line start x coordinate.
 	 * @param j
@@ -199,7 +199,7 @@ public class Board {
 
 	/**
 	 * Check for straight vertical line.
-	 * 
+	 *
 	 * @param i
 	 *            Line start x coordinate.
 	 * @param j
@@ -234,7 +234,7 @@ public class Board {
 
 	/**
 	 * Check for straight diagonal line.
-	 * 
+	 *
 	 * @param i
 	 *            Line start x coordinate.
 	 * @param j
@@ -272,7 +272,7 @@ public class Board {
 
 	/**
 	 * Check for straight diagonal line.
-	 * 
+	 *
 	 * @param i
 	 *            Line start x coordinate.
 	 * @param j
@@ -353,7 +353,7 @@ public class Board {
 
 	/**
 	 * Turn getter.
-	 * 
+	 *
 	 * @return Turn as number.
 	 */
 	public int getTurn() {
@@ -362,7 +362,7 @@ public class Board {
 
 	/**
 	 * Game over flag setter.
-	 * 
+	 *
 	 * @param gameOver
 	 *            True if the game is over, false otherwise.
 	 */
@@ -372,7 +372,7 @@ public class Board {
 
 	/**
 	 * Is game over getter.
-	 * 
+	 *
 	 * @return True if the game is over, false otherwise.
 	 */
 	public boolean isGameOver() {
@@ -381,7 +381,7 @@ public class Board {
 
 	/**
 	 * Is turn over getter.
-	 * 
+	 *
 	 * @return True if the turn is over, false otherwise.
 	 */
 	public boolean isTurnOver() {
@@ -439,7 +439,7 @@ public class Board {
 
 	/**
 	 * Pieces on the board getter.
-	 * 
+	 *
 	 * @return Two-dimensional array with the pieces on the board.
 	 */
 	public Piece[][] getPieces() {
@@ -449,7 +449,7 @@ public class Board {
 
 	/**
 	 * Selected pieces on the board.
-	 * 
+	 *
 	 * @return Two-dimensional array with the true for the selected pieces and
 	 *         false for non selected pieces.
 	 */
@@ -460,7 +460,7 @@ public class Board {
 
 	/**
 	 * Check for selected pieces on the board.
-	 * 
+	 *
 	 * @return True if there is a selection on the board, false otherwise.
 	 */
 	public boolean hasSelection() {
@@ -533,7 +533,7 @@ public class Board {
 
 	/**
 	 * Manipulate board with a click on the specific coordinates.
-	 * 
+	 *
 	 * @param x
 	 *            Coordinate x of the click.
 	 * @param y
@@ -634,7 +634,7 @@ public class Board {
 
 	/**
 	 * Check is the move valid.
-	 * 
+	 *
 	 * @param move
 	 *            Move to be checked.
 	 * @return True if the move is valid, false otherwise.
@@ -666,7 +666,7 @@ public class Board {
 
 	/**
 	 * Check for third move repetition.
-	 * 
+	 *
 	 * @return True if the move was repeated, false otherwise.
 	 */
 	public boolean hasThirdMoveRepetition() {
@@ -697,7 +697,7 @@ public class Board {
 
 	/**
 	 * Check for winner combination on the board.
-	 * 
+	 *
 	 * @return True if there is a winner combination, false otherwise.
 	 */
 	public boolean hasWinner() {
@@ -727,7 +727,7 @@ public class Board {
 
 	/**
 	 * Check for available valid move.
-	 * 
+	 *
 	 * @return True if there is a valid move, false otherwise.
 	 */
 	public boolean hasValidMove() {
@@ -748,7 +748,7 @@ public class Board {
 
 	/**
 	 * Check for game over conditions according to the game rules.
-	 * 
+	 *
 	 * @return True if there are game over condition, false otherwise.
 	 */
 	public boolean checkForGameOver() {
@@ -769,7 +769,7 @@ public class Board {
 
 	/**
 	 * Provide two-dimensional array with the winners combinations.
-	 * 
+	 *
 	 * @return Two-dimensional array with true in the combination and false if
 	 *         it is not in the combination.
 	 */
@@ -840,8 +840,8 @@ public class Board {
 		long binary = 0;
 		for (int i = 0; i < pieces.length; i++) {
 			for (int j = 0; j < pieces[i].length; j++) {
-				binary |= pieces[i][j].getId();
 				binary <<= 3;
+				binary |= pieces[i][j].getId();
 			}
 		}
 
@@ -858,11 +858,11 @@ public class Board {
 	 * @return Board object.
 	 */
 	public Board fromBinary(long binary) {
-		final long mask = 0x7;
+		final long MASK = 0x7;
 
 		for (int i = pieces.length-1; i >=0; i--) {
 			for (int j = pieces[i].length-1; j >= 0; j--) {
-				pieces[i][j] = Piece.valueOf(binary & mask);
+				pieces[i][j] = Piece.valueOf(binary & MASK);
 				binary >>= 3;
 			}
 		}
@@ -870,5 +870,24 @@ public class Board {
 		//TODO Mark last played piece.
 
 		return this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		String result = "";
+		for(int i=0; i<COLS; i++) {
+			for(int j=0; j<ROWS; j++) {
+				result += pieces[i][j];
+				result += " ";
+			}
+			result = result.trim();
+			result += "\n";
+		}
+		result = result.trim();
+
+		return result;
 	}
 }
