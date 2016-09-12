@@ -28,17 +28,17 @@
 Съдържание
 </h1>
 
-Съдържание .................................................
-1. Въведение ...............................................
-2. Логическата игра за дъска Ithaka ........................
-3. Управление на проект с отворен код ......................
-4. Генериране на печалба от проекти с отворен код ..........
-5. Визуализиране на помощна информация .....................
-6. Потребителски интерфейс .................................
-7. Обектно-ориентиран модел ................................
-8. Извършване на пресмятания ...............................
-9. Заключение ..............................................
-Литература .................................................
+Съдържание .................................................<br/>
+1. Въведение ...............................................<br/>
+2. Логическата игра за дъска Ithaka ........................<br/>
+3. Управление на проект с отворен код ......................<br/>
+4. Генериране на печалба от проекти с отворен код ..........<br/>
+5. Визуализиране на помощна информация .....................<br/>
+6. Потребителски интерфейс .................................<br/>
+7. Обектно-ориентиран модел ................................<br/>
+8. Извършване на пресмятания ...............................<br/>
+9. Заключение ..............................................<br/>
+Литература .................................................<br/>
 
 <hr/>
 <h1>
@@ -1361,14 +1361,14 @@ Git е двустепенна система за контрол на верси
 Литература
 </h1>
 
-1. J. Goodwill, W. Matlock, Beginning Swift Games Development for iOS, Apress, ISBN 978-1-4842-0400-9, 2015
-2. J. F. DiMarzio, Practical Android 4 Games Development, Apress, ISBN 978-1-4302-4030-3, 2011
-3. W. Jackson, Beginning Java 8 Game Development, Apress, ISBN 978-1-4842-0415-3, 2014
-4. D. Astle, K. Hawkins, Beginning OpenGL Game Programming, Premier Press, ISBN 1-59200-369-9, 2004
-5. R. Chin, Beginning Android 3D Game Development, Apress, ISBN 978-1-4302-6548-1, 2014
-6. J. Novak, Game Development Essentials: An Introduction, Third Edition, Delmar Cengage Learning, ISBN 978-1-1113-0765-3, 2012
-7. E. Bethke, Game development and production, Wordware Publishing Inc, ISBN 1-55622-951-8, 2003
-8. А. Шикаланов, Т. Балабанов, Многоезична интегрирана среда за разработка на приложения Eclipse, За буквите - О писменехь, ISBN 978-619-185-101-0, 2014
+1. J. Goodwill, W. Matlock, Beginning Swift Games Development for iOS, Apress, ISBN 978-1-4842-0400-9, 2015<br/>
+2. J. F. DiMarzio, Practical Android 4 Games Development, Apress, ISBN 978-1-4302-4030-3, 2011<br/>
+3. W. Jackson, Beginning Java 8 Game Development, Apress, ISBN 978-1-4842-0415-3, 2014<br/>
+4. D. Astle, K. Hawkins, Beginning OpenGL Game Programming, Premier Press, ISBN 1-59200-369-9, 2004<br/>
+5. R. Chin, Beginning Android 3D Game Development, Apress, ISBN 978-1-4302-6548-1, 2014<br/>
+6. J. Novak, Game Development Essentials: An Introduction, Third Edition, Delmar Cengage Learning, ISBN 978-1-1113-0765-3, 2012<br/>
+7. E. Bethke, Game development and production, Wordware Publishing Inc, ISBN 1-55622-951-8, 2003<br/>
+8. А. Шикаланов, Т. Балабанов, Многоезична интегрирана среда за разработка на приложения Eclipse, За буквите - О писменехь, ISBN 978-619-185-101-0, 2014<br/>
 
 </body>
 </html>
