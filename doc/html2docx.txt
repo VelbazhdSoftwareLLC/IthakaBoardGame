@@ -1,1 +1,2 @@
 pandoc -s -S book.html -o book.docx
+libreoffice --headless --convert-to odt book.html
