@@ -1,0 +1,1 @@
+pandoc -s -S book.html -o book.docx
