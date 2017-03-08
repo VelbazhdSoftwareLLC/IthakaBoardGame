@@ -5,16 +5,17 @@ import eu.veldsoft.ithaka.board.game.model.Move;
 import eu.veldsoft.ithaka.board.game.model.Piece;
 
 /**
- * Random search for the most stupid bot.
+ * Monte Carlo tree search for the most stupid bot.
  *
  * @author Todor Balabanov
  */
-public class RandomArtificialIntelligence extends AbstractArtificialIntelligence {
+public class MonteCarloArtificialIntelligence extends AbstractArtificialIntelligence {
     /**
      * @{inheritDoc}
      */
     @Override
     public Move move(Board board) throws NoValidMoveException {
+        // TODO Implement Monte Carlo tree search.
         Move move = null;
         Piece state[][] = board.getPieces();
         do {

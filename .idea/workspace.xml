@@ -24,14 +24,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b85a8e4-bfc0-420c-a8bb-4ab2b7a61351" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/annotations_android_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/MonteCarloArtificialIntelligence.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" afterPath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build.gradle" afterPath="$PROJECT_DIR$/IthakaBoardGame/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/assets/debug/banner.html" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/assets/debug/banner.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values-v11.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values-v11.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values-v14.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values-v14.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values-w820dp-v13.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values-w820dp-v13.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-hdpi.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-hdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-mdpi.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-mdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/menu.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/menu.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/raw.json" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/blame/res/debug/single/raw.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/dependencies/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/dependencies/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_0/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_0/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_1/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_1/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_2/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_2/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_4/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_4/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_5/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_5/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_6/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_6/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_7/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_7/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_8/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_8/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_9/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/instant-run-support/debug/slice_9/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/manifests/instant-run/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/manifests/instant-run/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_about.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_about.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_game.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_game.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_help.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_help.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_menu.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_splash.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/layout/activity_splash.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/menu/game_option_menu.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/menu/game_option_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/res/merged/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/build/intermediates/restart-dex/debug/build-info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/assets/banner.html" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/assets/banner.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/AboutActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/AboutActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/HelpActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/HelpActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/MenuActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/SplashActivity.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/SplashActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Move.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Move.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Piece.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Piece.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/PlayingMode.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/PlayingMode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Util.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/AbstractArtificialIntelligence.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/AbstractArtificialIntelligence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/ArtificialIntelligence.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/ArtificialIntelligence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/NoValidMoveException.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/NoValidMoveException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/RandomArtificialIntelligence.java" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/RandomArtificialIntelligence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_about.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_about.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_game.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_game.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_help.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_help.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_splash.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/layout/activity_splash.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/menu/game_option_menu.xml" afterPath="$PROJECT_DIR$/IthakaBoardGame/src/main/res/menu/game_option_menu.xml" />
     </list>
     <ignored path="IthakaBoardGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +117,40 @@
     <favorites_list name="IthakaBoardGame" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="MonteCarloArtificialIntelligence.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/MonteCarloArtificialIntelligence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="624" column="46" selection-start-line="624" selection-start-column="46" selection-end-line="624" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomArtificialIntelligence.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/RandomArtificialIntelligence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="12" selection-start-line="17" selection-start-column="8" selection-end-line="27" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1589,15 +1677,16 @@
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/PlayingMode.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/NoValidMoveException.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Move.java" />
-        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/AbstractArtificialIntelligence.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/ArtificialIntelligence.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/RandomArtificialIntelligence.java" />
-        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Piece.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java" />
         <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/AbstractArtificialIntelligence.java" />
+        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java" />
+        <option value="$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/MonteCarloArtificialIntelligence.java" />
       </list>
     </option>
   </component>
@@ -1625,7 +1714,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -1639,11 +1728,111 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="PackagesPane">
         <subPane />
       </pane>
       <pane id="AndroidView">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IthakaBoardGame-IthakaBoardGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches">
         <subPane />
@@ -1707,26 +1896,6 @@
             <PATH_ELEMENT USER_OBJECT="IthakaBoardGame">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IthakaBoardGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IthakaBoardGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IthakaBoardGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2175,6 +2344,14 @@
       <option name="presentableId" value="Default" />
       <updated>1461594214643</updated>
     </task>
+    <task id="LOCAL-00001" summary="Project upgrade was done.">
+      <created>1488807057518</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1488807057531</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2188,7 +2365,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1026" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.497006" order="7" side_tool="false" content_ui="tabs" />
@@ -2203,7 +2380,8 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31390592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31390592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24948876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -2221,7 +2399,6 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android WiFi ADB" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2236,18 +2413,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Project upgrade was done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Project upgrade was done." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="793" column="0" selection-start-line="756" selection-start-column="0" selection-end-line="793" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2273,9 +2448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="611" column="28" selection-start-line="611" selection-start-column="28" selection-end-line="611" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2318,9 +2490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="611" column="28" selection-start-line="611" selection-start-column="28" selection-end-line="611" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2349,9 +2518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2366,9 +2532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2533,37 +2696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/AbstractArtificialIntelligence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/ArtificialIntelligence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/RandomArtificialIntelligence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="605" column="52" selection-start-line="605" selection-start-column="52" selection-end-line="605" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2578,20 +2710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/TreeBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2607,7 +2729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2620,6 +2741,56 @@
       </provider>
       <provider editor-type-id="android-manifest">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/BruteForceArtificialIntelligence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/ArtificialIntelligence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/AbstractArtificialIntelligence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/RandomArtificialIntelligence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="12" selection-start-line="17" selection-start-column="8" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/GameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="624" column="46" selection-start-line="624" selection-start-column="46" selection-end-line="624" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IthakaBoardGame/src/main/java/eu/veldsoft/ithaka/board/game/model/ai/MonteCarloArtificialIntelligence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

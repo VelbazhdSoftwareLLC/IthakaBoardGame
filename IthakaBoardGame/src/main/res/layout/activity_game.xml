@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}">
 
     <ImageView
         android:id="@+id/piece00"
@@ -172,6 +172,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

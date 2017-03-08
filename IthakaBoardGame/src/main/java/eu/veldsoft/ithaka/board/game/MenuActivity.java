@@ -33,66 +33,66 @@ import eu.veldsoft.ithaka.board.game.model.Util;
  */
 public class MenuActivity extends Activity {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_menu);
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
 
-		((Button) findViewById(R.id.single_game)).setOnClickListener(
-				  new View.OnClickListener() {
-					  @Override
-					  public void onClick(View view) {
-						  Intent intent = new Intent(MenuActivity.this, GameActivity.class);
-						  intent.putExtra("mode", PlayingMode.SINGLE_PLAYER);
-						  startActivity(intent);
-					  }
-				  }
-		);
+        ((Button) findViewById(R.id.single_game)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+                        intent.putExtra("mode", PlayingMode.SINGLE_PLAYER);
+                        startActivity(intent);
+                    }
+                }
+        );
 
-		((Button) findViewById(R.id.double_game)).setOnClickListener(
-				  new View.OnClickListener() {
-					  @Override
-					  public void onClick(View view) {
-						  Intent intent = new Intent(MenuActivity.this, GameActivity.class);
-						  intent.putExtra("mode", PlayingMode.TWO_PLAYERS);
-						  startActivity(intent);
-					  }
-				  }
-		);
+        ((Button) findViewById(R.id.double_game)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+                        intent.putExtra("mode", PlayingMode.TWO_PLAYERS);
+                        startActivity(intent);
+                    }
+                }
+        );
 
-		//TODO https://github.com/JimSeker/bluetooth/tree/master/blueToothDemo/app/src/main/java/edu/cs4730/btDemo
-		((Button) findViewById(R.id.join_game)).setOnClickListener(
-				  new View.OnClickListener() {
-					  @Override
-					  public void onClick(View view) {
-						  Intent intent = new Intent(MenuActivity.this, GameActivity.class);
-						  intent.putExtra("mode", PlayingMode.CLIENT_MULTIPLAYER);
-						  startActivity(intent);
-					   }
-				  }
-		);
+        //TODO https://github.com/JimSeker/bluetooth/tree/master/blueToothDemo/app/src/main/java/edu/cs4730/btDemo
+        ((Button) findViewById(R.id.join_game)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+                        intent.putExtra("mode", PlayingMode.CLIENT_MULTIPLAYER);
+                        startActivity(intent);
+                    }
+                }
+        );
 
-		((Button) findViewById(R.id.create_game)).setOnClickListener(
-				  new View.OnClickListener() {
-					  @Override
-					  public void onClick(View view) {
-						  Intent intent = new Intent(MenuActivity.this, GameActivity.class);
-						  intent.putExtra("mode", PlayingMode.SERVER_MULTIPLAYER);
-						  startActivity(intent);
-					  }
-				  }
-		);
+        ((Button) findViewById(R.id.create_game)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+                        intent.putExtra("mode", PlayingMode.SERVER_MULTIPLAYER);
+                        startActivity(intent);
+                    }
+                }
+        );
 
-		((Button) findViewById(R.id.exit_game)).setOnClickListener(
-				  new View.OnClickListener() {
-					  @Override
-					  public void onClick(View view) {
-						  MenuActivity.this.finish();
-					  }
-				  }
-		);
-	}
+        ((Button) findViewById(R.id.exit_game)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        MenuActivity.this.finish();
+                    }
+                }
+        );
+    }
 }

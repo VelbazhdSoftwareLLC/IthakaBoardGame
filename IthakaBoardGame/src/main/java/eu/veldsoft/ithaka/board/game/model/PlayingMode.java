@@ -6,5 +6,5 @@ package eu.veldsoft.ithaka.board.game.model;
  * @author Todor Balabanov
  */
 public enum PlayingMode {
-	SINGLE_PLAYER, TWO_PLAYERS, CLIENT_MULTIPLAYER, SERVER_MULTIPLAYER
+    SINGLE_PLAYER, TWO_PLAYERS, CLIENT_MULTIPLAYER, SERVER_MULTIPLAYER
 }

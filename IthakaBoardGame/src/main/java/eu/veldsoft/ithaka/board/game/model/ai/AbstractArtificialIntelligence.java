@@ -8,8 +8,8 @@ import java.util.Random;
  * @author Todor Balabanov
  */
 abstract class AbstractArtificialIntelligence implements ArtificialIntelligence {
-	/**
-	 * Pseudo-random number generator object.
-	 */
-	protected static Random PRNG = new Random();
+    /**
+     * Pseudo-random number generator object.
+     */
+    protected static final Random PRNG = new Random();
 }
