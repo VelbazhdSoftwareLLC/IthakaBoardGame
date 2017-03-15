@@ -64,7 +64,7 @@ public class Board {
     /**
      * Moves history.
      */
-    private Vector<Move> moves = new Vector<Move>();
+    private Vector<Move> history = new Vector<Move>();
 
     /**
      * Unselect all piece on the board.
@@ -85,7 +85,7 @@ public class Board {
      */
     private boolean hasEmptyPath(Move move) {
         /*
-		 * Move to itself is not possible.
+         * Move to itself is not possible.
 		 */
         if (move.getStartX() == move.getEndX()
                 && move.getStartY() == move.getEndY()) {
@@ -382,6 +382,25 @@ public class Board {
     }
 
     /**
+     * Copy constructor.
+     *
+     * @param original Original object.
+     */
+    public Board(Board original) {
+        //TODO Make deep copies.
+        this.pieces = original.pieces;
+        this.selection = original.selection;
+
+        this.turn = original.turn;
+        this.gameOver = original.gameOver;
+        this.turnOver = original.turnOver;
+        this.history = new Vector<Move>();
+        for(Move move : original.history) {
+            this.history.add(move);
+        }
+    }
+
+    /**
      * Constructor for binary serialization.
      *
      * @param binary Binary representation of board state.
@@ -467,11 +486,11 @@ public class Board {
      * @return String representation of the last move coordinates.
      */
     public String lastMoveCoordiantes() {
-        if (moves.size() == 0) {
+        if (history.size() == 0) {
             return "";
         }
 
-        Move move = moves.lastElement();
+        Move move = history.lastElement();
         return "" + move.getStartX() + " " + move.getStartY() + " " + move.getEndX() + " " + move.getEndY();
     }
 
@@ -482,7 +501,7 @@ public class Board {
         turn = 0;
         gameOver = false;
         turnOver = false;
-        moves.clear();
+        history.clear();
 
         pieces = new Piece[][]{
                 {Piece.BLUE, Piece.BLUE, Piece.FUCHSIA, Piece.FUCHSIA},
@@ -507,8 +526,8 @@ public class Board {
 		/*
 		 * Last moved piece can not be moved again.
 		 */
-        if (moves.size() > 0 && x == moves.lastElement().getEndX()
-                && y == moves.lastElement().getEndY()) {
+        if (history.size() > 0 && x == history.lastElement().getEndX()
+                && y == history.lastElement().getEndY()) {
             return true;
         }
 
@@ -558,7 +577,7 @@ public class Board {
 					/*
 					 * If the move is valid - finish the turn.
 					 */
-                    moves.add(move);
+                    history.add(move);
                     pieces[move.getEndX()][move.getEndY()] = pieces[move
                             .getStartX()][move.getStartY()];
                     pieces[move.getStartX()][move.getStartY()] = Piece.EMPTY;
@@ -653,16 +672,16 @@ public class Board {
     public boolean hasThirdMoveRepetition() {
         int count = 0;
 
-        if (moves.size() <= 0) {
+        if (history.size() <= 0) {
             return false;
         }
 
 		/*
 		 * Last move will be compared with moves before that.
 		 */
-        Move lastMove = moves.lastElement();
-        for (int i = moves.size() - 1; i >= 0; i -= 2) {
-            if (lastMove.equals(moves.elementAt(i)) == false) {
+        Move lastMove = history.lastElement();
+        for (int i = history.size() - 1; i >= 0; i -= 2) {
+            if (lastMove.equals(history.elementAt(i)) == false) {
                 break;
             }
 
