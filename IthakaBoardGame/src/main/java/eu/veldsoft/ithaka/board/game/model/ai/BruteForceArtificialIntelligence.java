@@ -19,27 +19,27 @@ public class BruteForceArtificialIntelligence extends AbstractArtificialIntellig
     /**
      * Game tree stored as associative array. The key is a board state node. The value is a connections list of edges.
      */
-    private static Map<Long, List<Long>> tree = new HashMap<Long, List<Long>>();
+    private static Map<byte[], ArrayList<Long>> tree = new HashMap<byte[], ArrayList<Long>>();
 
     /**
      * Static constrictor is used to build game tree.
      */
     static {
         //TODO Build the tree in separate thread.
-        List<Long> unhandled = new ArrayList<Long>();
+        List<byte[]> unhandled = new ArrayList<byte[]>();
 
 		/*
          * Add tree root.
 		 */
-        long root = (new Board()).toBinary();
+        byte[] root = (new Board()).toBinary();
         tree.put(root, new ArrayList<Long>());
         unhandled.add(root);
 
 		/*
-		 * Add sub-trees.
+         * Add sub-trees.
 		 */
         while (unhandled.isEmpty() == false) {
-            Long node = unhandled.get(0);
+            byte[] node = unhandled.get(0);
             List<Move> moves = (new Board(node)).allValidMoves();
             for (Move move : moves) {
 				/*
@@ -48,7 +48,7 @@ public class BruteForceArtificialIntelligence extends AbstractArtificialIntellig
                 Board board = new Board(node);
                 board.click(move.getStartX(), move.getStartY());
                 board.click(move.getEndX(), move.getEndY());
-                long state = board.toBinary();
+                byte[] state = board.toBinary();
 
 				/*
 				 * Build a tree not a graph.

@@ -1,5 +1,12 @@
 package eu.veldsoft.ithaka.board.game.model;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -9,7 +16,7 @@ import java.util.Vector;
  *
  * @author Todor Balabanov
  */
-public class Board {
+public class Board implements Serializable {
     /**
      * Number of rows on the game board.
      */
@@ -93,14 +100,14 @@ public class Board {
         }
 
 		/*
-		 * Starting cell should not be empty.
+         * Starting cell should not be empty.
 		 */
         if (pieces[move.getStartX()][move.getStartY()] == Piece.EMPTY) {
             return false;
         }
 
 		/*
-		 * Destination cell should be empty.
+         * Destination cell should be empty.
 		 */
         if (pieces[move.getEndX()][move.getEndY()] != Piece.EMPTY) {
             return false;
@@ -110,14 +117,14 @@ public class Board {
         int yStep = move.getEndY() - move.getStartY();
 
 		/*
-		 * Move can be orthogonal or diagonal.
+         * Move can be orthogonal or diagonal.
 		 */
         if (xStep != 0 && yStep != 0 && Math.abs(xStep) != Math.abs(yStep)) {
             return false;
         }
 
 		/*
-		 * Scale to -1, 0 or +1.
+         * Scale to -1, 0 or +1.
 		 */
         if (xStep != 0) {
             xStep /= Math.abs(xStep);
@@ -127,8 +134,8 @@ public class Board {
         }
 
         // TODO Do not check correctly!
-		/*
-		 * Full path should be only empty cells.
+        /*
+         * Full path should be only empty cells.
 		 */
         for (int i = move.getStartX() + xStep, j = move.getStartY() + yStep; (i == move
                 .getEndX() && j == move.getEndY()) == false; i += xStep, j += yStep) {
@@ -395,19 +402,19 @@ public class Board {
         this.gameOver = original.gameOver;
         this.turnOver = original.turnOver;
         this.history = new Vector<Move>();
-        for(Move move : original.history) {
+        for (Move move : original.history) {
             this.history.add(move);
         }
     }
 
     /**
-     * Constructor for binary serialization.
+     * Constructor for bytes serialization.
      *
-     * @param binary Binary representation of board state.
+     * @param bytes Binary representation of board state.
      */
-    public Board(long binary) {
+    public Board(byte[] bytes) {
         this();
-        fromBinary(binary);
+        fromBinary(bytes);
     }
 
     /**
@@ -836,37 +843,49 @@ public class Board {
      *
      * @return String representation of the binary encoding.
      */
-    public Long toBinary() {
-        long binary = 0;
-        for (int i = 0; i < pieces.length; i++) {
-            for (int j = 0; j < pieces[i].length; j++) {
-                binary <<= 3;
-                binary |= pieces[i][j].getId();
-            }
+    public byte[] toBinary() {
+        byte bytes[] = {};
+
+        try {
+            ByteArrayOutputStream out = null;
+            (new ObjectOutputStream(out = new ByteArrayOutputStream())).writeObject(this);
+            out.flush();
+            bytes = out.toByteArray();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        //TODO Mark last played piece.
-
-        return binary;
+        return bytes;
     }
 
     /**
-     * Provide board object from binary encoding.
+     * Provide board object from bytes encoding.
      *
-     * @param binary Binary representation of the board.
+     * @param bytes Binary representation of the board.
      * @return Board object.
      */
-    public Board fromBinary(long binary) {
-        final long MASK = 0x7;
+    public Board fromBinary(byte[] bytes) {
+        Board board = this;
 
-        for (int i = pieces.length - 1; i >= 0; i--) {
-            for (int j = pieces[i].length - 1; j >= 0; j--) {
-                pieces[i][j] = Piece.valueOf(binary & MASK);
-                binary >>= 3;
-            }
+        try {
+            ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bytes));
+            board = (Board) in.readObject();
+            in.close();
+        } catch (StreamCorruptedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
 
-        //TODO Mark last played piece.
+        this.turn = board.turn;
+        this.turnOver = board.turnOver;
+        this.gameOver = board.gameOver;
+        this.pieces = board.pieces;
+        this.selection = board.selection;
+        this.history = board.history;
 
         return this;
     }

@@ -1,11 +1,13 @@
 package eu.veldsoft.ithaka.board.game.model;
 
+import java.io.Serializable;
+
 /**
  * Single move.
  *
  * @author Todor Balabanov
  */
-public class Move {
+public class Move implements Serializable {
     /**
      * Move x from coordinate.
      */
@@ -47,15 +49,8 @@ public class Move {
      *
      * @param coordinates Object to copy from.
      */
-    public Move(int coordinates[]) throws RuntimeException {
-        if (coordinates == null || coordinates.length != 4) {
-            throw new RuntimeException("Invalide coordinates!");
-        }
-
-        startX = coordinates[0];
-        startY = coordinates[1];
-        endX = coordinates[2];
-        endY = coordinates[3];
+    public Move(int coordinates[]) {
+        this(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
     }
 
     /**
