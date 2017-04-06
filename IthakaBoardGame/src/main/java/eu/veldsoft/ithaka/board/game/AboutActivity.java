@@ -10,12 +10,12 @@ import android.os.Bundle;
  */
 public class AboutActivity extends Activity {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_about);
+	}
 }

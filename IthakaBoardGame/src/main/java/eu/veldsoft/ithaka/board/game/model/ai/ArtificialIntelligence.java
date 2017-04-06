@@ -9,12 +9,12 @@ import eu.veldsoft.ithaka.board.game.model.Move;
  * @author Todor Balabanov
  */
 public interface ArtificialIntelligence {
-    /**
-     * A.I. move offer.
-     *
-     * @param board State of the game board.
-     * @return Coordinates for a move x1 and y1 pice to move, x2 and y2 cell to move to.
-     * @throws NoValidMoveException If move offer is not possible
-     */
-    public Move move(Board board) throws NoValidMoveException;
+	/**
+	 * A.I. move offer.
+	 *
+	 * @param board State of the game board.
+	 * @return Coordinates for a move x1 and y1 pice to move, x2 and y2 cell to move to.
+	 * @throws NoValidMoveException If move offer is not possible
+	 */
+	public Move move(Board board) throws NoValidMoveException;
 }

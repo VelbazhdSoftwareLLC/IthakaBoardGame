@@ -11,17 +11,17 @@ import eu.veldsoft.ithaka.board.game.model.Move;
  * @author Todor Balabanov
  */
 abstract class AbstractArtificialIntelligence implements ArtificialIntelligence {
-    /**
-     * Pseudo-random number generator object.
-     */
-    protected static final Random PRNG = new Random();
+	/**
+	 * Pseudo-random number generator object.
+	 */
+	protected static final Random PRNG = new Random();
 
-    /**
-     * @{inheritDoc}
-     */
-    @Override
-    public Move move(Board board) throws NoValidMoveException {
-        //TODO Check for valid move.
-        return null;
-    }
+	/**
+	 * @{inheritDoc}
+	 */
+	@Override
+	public Move move(Board board) throws NoValidMoveException {
+		//TODO Check for valid move.
+		return null;
+	}
 }

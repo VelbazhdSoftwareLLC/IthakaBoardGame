@@ -16,83 +16,83 @@ import eu.veldsoft.ithaka.board.game.model.Piece;
  * @author Todor Balabanov
  */
 public class BruteForceArtificialIntelligence extends AbstractArtificialIntelligence {
-    /**
-     * Game tree stored as associative array. The key is a board state node. The value is a connections list of edges.
-     */
-    private static Map<byte[], ArrayList<Long>> tree = new HashMap<byte[], ArrayList<Long>>();
+	/**
+	 * Game tree stored as associative array. The key is a board state node. The value is a connections list of edges.
+	 */
+	private static Map<byte[], ArrayList<Long>> tree = new HashMap<byte[], ArrayList<Long>>();
 
-    /**
-     * Static constrictor is used to build game tree.
-     */
-    static {
-        //TODO Build the tree in separate thread.
-        List<byte[]> unhandled = new ArrayList<byte[]>();
+	/**
+	 * Static constrictor is used to build game tree.
+	 */
+	static {
+		//TODO Build the tree in separate thread.
+		List<byte[]> unhandled = new ArrayList<byte[]>();
 
 		/*
-         * Add tree root.
+			* Add tree root.
 		 */
-        byte[] root = (new Board()).toBinary();
-        tree.put(root, new ArrayList<Long>());
-        unhandled.add(root);
+		byte[] root = (new Board()).toBinary();
+		tree.put(root, new ArrayList<Long>());
+		unhandled.add(root);
 
 		/*
          * Add sub-trees.
 		 */
-        while (unhandled.isEmpty() == false) {
-            byte[] node = unhandled.get(0);
-            List<Move> moves = (new Board(node)).allValidMoves();
-            for (Move move : moves) {
+		while (unhandled.isEmpty() == false) {
+			byte[] node = unhandled.get(0);
+			List<Move> moves = (new Board(node)).allValidMoves();
+			for (Move move : moves) {
 				/*
 				 * Generate next state.
 				 */
-                Board board = new Board(node);
-                board.click(move.getStartX(), move.getStartY());
-                board.click(move.getEndX(), move.getEndY());
-                byte[] state = board.toBinary();
+				Board board = new Board(node);
+				board.click(move.getStartX(), move.getStartY());
+				board.click(move.getEndX(), move.getEndY());
+				byte[] state = board.toBinary();
 
 				/*
 				 * Build a tree not a graph.
 				 */
-                if (tree.containsKey(state) == true) {
-                    continue;
-                }
+				if (tree.containsKey(state) == true) {
+					continue;
+				}
 
-                tree.get(node).add(move.toBinary());
-                tree.put(state, new ArrayList<Long>());
+				tree.get(node).add(move.toBinary());
+				tree.put(state, new ArrayList<Long>());
 
-                if (board.hasWinner() == false) {
-                    unhandled.add(state);
-                }
-            }
+				if (board.hasWinner() == false) {
+					unhandled.add(state);
+				}
+			}
 
-            unhandled.remove(0);
-        }
-    }
+			unhandled.remove(0);
+		}
+	}
 
-    /**
-     * Store in a stream generated game tree.
-     *
-     * @param out Output stream object.
-     */
-    public static void storeTree(OutputStream out) {
-        //TODO Store game tree.
-    }
+	/**
+	 * Store in a stream generated game tree.
+	 *
+	 * @param out Output stream object.
+	 */
+	public static void storeTree(OutputStream out) {
+		//TODO Store game tree.
+	}
 
-    /**
-     * @{inheritDoc}
-     */
-    @Override
-    public Move move(Board board) throws NoValidMoveException {
-        Move move = null;
-        Piece state[][] = board.getPieces();
-        do {
-            int x1 = PRNG.nextInt(state.length);
-            int y1 = PRNG.nextInt(state[x1].length);
-            int x2 = PRNG.nextInt(state.length);
-            int y2 = PRNG.nextInt(state[x2].length);
-            move = new Move(x1, y1, x2, y2);
-        } while (board.isValid(move) == false);
+	/**
+	 * @{inheritDoc}
+	 */
+	@Override
+	public Move move(Board board) throws NoValidMoveException {
+		Move move = null;
+		Piece state[][] = board.getPieces();
+		do {
+			int x1 = PRNG.nextInt(state.length);
+			int y1 = PRNG.nextInt(state[x1].length);
+			int x2 = PRNG.nextInt(state.length);
+			int y2 = PRNG.nextInt(state[x2].length);
+			move = new Move(x1, y1, x2, y2);
+		} while (board.isValid(move) == false);
 
-        return move;
-    }
+		return move;
+	}
 }
