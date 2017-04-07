@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import eu.veldsoft.ithaka.board.game.model.Mode;
 
@@ -23,7 +22,7 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 
-		((Button) findViewById(R.id.single_game)).setOnClickListener(
+		findViewById(R.id.single_game).setOnClickListener(
 				  new View.OnClickListener() {
 					  @Override
 					  public void onClick(View view) {
@@ -34,7 +33,7 @@ public class MenuActivity extends Activity {
 				  }
 		);
 
-		((Button) findViewById(R.id.double_game)).setOnClickListener(
+		findViewById(R.id.double_game).setOnClickListener(
 				  new View.OnClickListener() {
 					  @Override
 					  public void onClick(View view) {
@@ -46,7 +45,7 @@ public class MenuActivity extends Activity {
 		);
 
 		//TODO https://github.com/JimSeker/bluetooth/tree/master/blueToothDemo/app/src/main/java/edu/cs4730/btDemo
-		((Button) findViewById(R.id.join_game)).setOnClickListener(
+		findViewById(R.id.join_game).setOnClickListener(
 				  new View.OnClickListener() {
 					  @Override
 					  public void onClick(View view) {
@@ -57,7 +56,7 @@ public class MenuActivity extends Activity {
 				  }
 		);
 
-		((Button) findViewById(R.id.create_game)).setOnClickListener(
+		findViewById(R.id.create_game).setOnClickListener(
 				  new View.OnClickListener() {
 					  @Override
 					  public void onClick(View view) {
@@ -68,7 +67,7 @@ public class MenuActivity extends Activity {
 				  }
 		);
 
-		((Button) findViewById(R.id.exit_game)).setOnClickListener(
+		findViewById(R.id.exit_game).setOnClickListener(
 				  new View.OnClickListener() {
 					  @Override
 					  public void onClick(View view) {

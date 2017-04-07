@@ -36,7 +36,7 @@ import eu.veldsoft.ithaka.board.game.model.Move;
 import eu.veldsoft.ithaka.board.game.model.Piece;
 import eu.veldsoft.ithaka.board.game.model.Util;
 import eu.veldsoft.ithaka.board.game.model.ai.ArtificialIntelligence;
-import eu.veldsoft.ithaka.board.game.model.ai.MonteCarloArtificialIntelligence;
+import eu.veldsoft.ithaka.board.game.model.ai.RandomArtificialIntelligence;
 
 /**
  * Main application screen.
@@ -118,7 +118,7 @@ public class GameActivity extends Activity {
 			/*
 			 * If some other player have to play there is no move to generate.
 			 */
-			if (board.getTurn() % board.NUMBER_OF_PLAYERS != 1) {
+			if (board.getTurn() % Board.NUMBER_OF_PLAYERS != 1) {
 				return;
 			}
 
@@ -132,7 +132,7 @@ public class GameActivity extends Activity {
 			/*
 			 * Selection of random move.
 			 */
-			Move move = bots[board.getTurn() % board.NUMBER_OF_PLAYERS].move(board);
+			Move move = bots[board.getTurn() % Board.NUMBER_OF_PLAYERS].move(board);
 
 			/*
 			 * Do computer move.
@@ -187,21 +187,21 @@ public class GameActivity extends Activity {
 			/*
 			 * If some other player have to play there is no move to generate.
 			 */
-			if (mode == Mode.SINGLE_PLAYER && board.getTurn() % board.NUMBER_OF_PLAYERS != 0) {
+			if (mode == Mode.SINGLE_PLAYER && board.getTurn() % Board.NUMBER_OF_PLAYERS != 0) {
 				return;
 			}
 
 			/*
 			 * Match client in multiplayer mode.
 			 */
-			if (mode == Mode.CLIENT_MULTIPLAYER && board.getTurn() % board.NUMBER_OF_PLAYERS != 0) {
+			if (mode == Mode.CLIENT_MULTIPLAYER && board.getTurn() % Board.NUMBER_OF_PLAYERS != 0) {
 				return;
 			}
 
 			/*
 			 * Match server in multiplayer mode.
 			 */
-			if (mode == Mode.SERVER_MULTIPLAYER && board.getTurn() % board.NUMBER_OF_PLAYERS != 1) {
+			if (mode == Mode.SERVER_MULTIPLAYER && board.getTurn() % Board.NUMBER_OF_PLAYERS != 1) {
 				return;
 			}
 
@@ -610,7 +610,7 @@ public class GameActivity extends Activity {
 		 */
 		bots = new ArtificialIntelligence[]{
 				  null,
-				  new MonteCarloArtificialIntelligence(1000),};
+				  new RandomArtificialIntelligence(),};
 
 		/*
 		 * Load sounds.

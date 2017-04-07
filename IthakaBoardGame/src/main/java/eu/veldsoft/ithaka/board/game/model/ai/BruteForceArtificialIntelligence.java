@@ -36,7 +36,7 @@ public class BruteForceArtificialIntelligence extends AbstractArtificialIntellig
 		unhandled.add(root);
 
 		/*
-         * Add sub-trees.
+			* Add sub-trees.
 		 */
 		while (unhandled.isEmpty() == false) {
 			byte[] node = unhandled.get(0);

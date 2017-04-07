@@ -159,9 +159,7 @@ public class Move implements Serializable {
 			return false;
 		if (startX != other.startX)
 			return false;
-		if (startY != other.startY)
-			return false;
-		return true;
+		return startY == other.startY;
 	}
 
 	/**

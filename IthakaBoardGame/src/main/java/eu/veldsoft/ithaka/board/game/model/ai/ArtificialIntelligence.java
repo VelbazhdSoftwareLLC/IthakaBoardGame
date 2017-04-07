@@ -16,5 +16,5 @@ public interface ArtificialIntelligence {
 	 * @return Coordinates for a move x1 and y1 pice to move, x2 and y2 cell to move to.
 	 * @throws NoValidMoveException If move offer is not possible
 	 */
-	public Move move(Board board) throws NoValidMoveException;
+	Move move(Board board) throws NoValidMoveException;
 }

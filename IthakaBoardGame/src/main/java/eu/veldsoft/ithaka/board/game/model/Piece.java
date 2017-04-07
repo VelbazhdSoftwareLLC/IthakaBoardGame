@@ -19,7 +19,7 @@ public enum Piece {
 	 *
 	 * @param id Identifier value.
 	 */
-	private Piece(int id) {
+	Piece(int id) {
 		this.id = id;
 	}
 

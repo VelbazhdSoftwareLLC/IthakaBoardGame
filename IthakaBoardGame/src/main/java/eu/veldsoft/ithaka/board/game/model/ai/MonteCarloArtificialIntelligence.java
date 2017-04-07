@@ -59,7 +59,7 @@ public class MonteCarloArtificialIntelligence extends AbstractArtificialIntellig
 
 
 		/*
-         * Experiments are limited according to the available time.
+			* Experiments are limited according to the available time.
 		 */
 		Move move = null;
 		while (System.currentTimeMillis() < time) {

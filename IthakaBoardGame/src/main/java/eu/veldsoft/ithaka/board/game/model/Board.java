@@ -158,7 +158,7 @@ public class Board implements Serializable {
 	 */
 	private boolean hasEmptyPath(Move move) {
 		  /*
-         * Move to itself is not possible.
+			* Move to itself is not possible.
 		 */
 		if (move.getStartX() == move.getEndX()
 				  && move.getStartY() == move.getEndY()) {
@@ -404,11 +404,8 @@ public class Board implements Serializable {
 			}
 		}
 
-		if (count <= 1) {
-			return false;
-		}
+		return count > 1;
 
-		return true;
 	}
 
 	/**
@@ -529,12 +526,9 @@ public class Board implements Serializable {
 		/*
 		 * Last moved piece can not be moved again.
 		 */
-		if (history.size() > 0 && x == history.lastElement().getEndX()
-				  && y == history.lastElement().getEndY()) {
-			return true;
-		}
+		return history.size() > 0 && x == history.lastElement().getEndX()
+				  && y == history.lastElement().getEndY();
 
-		return false;
 	}
 
 	/**
@@ -660,11 +654,8 @@ public class Board implements Serializable {
 		/*
 		 * Check for empty cells between start and end.
 		 */
-		if (hasEmptyPath(move) == false) {
-			return false;
-		}
+		return hasEmptyPath(move) != false;
 
-		return true;
 	}
 
 	/**
@@ -691,11 +682,8 @@ public class Board implements Serializable {
 			count++;
 		}
 
-		if (count >= 3) {
-			return true;
-		}
+		return count >= 3;
 
-		return false;
 	}
 
 	/**
@@ -763,11 +751,8 @@ public class Board implements Serializable {
 			return true;
 		}
 
-		if (hasValidMove() == false) {
-			return true;
-		}
+		return hasValidMove() == false;
 
-		return false;
 	}
 
 	/**
@@ -843,8 +828,8 @@ public class Board implements Serializable {
 		int j = turn % Player.values().length;
 
 		int i = 0;
-		for(Player p : Player.values()) {
-			if(i == j) {
+		for (Player p : Player.values()) {
+			if (i == j) {
 				return p;
 			}
 		}
@@ -857,7 +842,7 @@ public class Board implements Serializable {
 	 *
 	 * @return Points taken by evry player.
 	 */
-	public Map<Player,Integer> score() {
+	public Map<Player, Integer> score() {
 		//TODO Implement score taking.
 
 		return null;
