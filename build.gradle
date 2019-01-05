@@ -1,15 +1,28 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+    
 buildscript {
     repositories {
+        google()
         jcenter()
+        maven{url "https://plugins.gradle.org/m2/"}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'org.codehaus.groovy:groovy-all:2.4.12'
+        classpath 'com.dicedmelon.gradle:jacoco-android:0.1.2'
+        classpath "gradle.plugin.com.vanniktech:gradle-android-javadoc-plugin:0.3.0"
     }
+}
+
+plugins {
+    id "org.sonarqube" version "2.6"
+    id "com.vanniktech.android.javadoc" version "0.3.0"
 }
 
 allprojects {
     repositories {
+        google()
         jcenter()
+        maven{url "https://plugins.gradle.org/m2/"}
     }
 }
