@@ -11,7 +11,7 @@
 [![codebeat badge](https://codebeat.co/badges/129caf76-7cea-479b-a4e5-9f21196aad81)](https://codebeat.co/projects/github-com-velbazhdsoftwarellc-ithakaboardgame-master) 
 [![Build Status](https://travis-ci.org/VelbazhdSoftwareLLC/IthakaBoardGame.svg?branch=master)](https://travis-ci.org/VelbazhdSoftwareLLC/IthakaBoardGame) 
 [![Coverage Status](https://codecov.io/gh/VelbazhdSoftwareLLC/IthakaBoardGame/branch/master/graph/badge.svg)](https://codecov.io/gh/VelbazhdSoftwareLLC/IthakaBoardGame) 
-[![Coverity status](https://scan.coverity.com/projects/17525/badge.svg)](https://scan.coverity.com/projects/ithakaboardgame) 
+[![Coverity status](https://scan.coverity.com/projects/17593/badge.svg)](https://scan.coverity.com/projects/ithakaboardgame) 
 
 [![Open Source Helpers](https://www.codetriage.com/velbazhdsoftwarellc/ithakaboardgame/badges/users.svg)](https://www.codetriage.com/velbazhdsoftwarellc/ithakaboardgame) 
 [![Documentation Status](https://readthedocs.org/projects/ithakaboardgame/badge/?version=latest)](https://ithakaboardgame.readthedocs.io/en/latest/?badge=latest)
