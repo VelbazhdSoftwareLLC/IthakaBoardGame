@@ -6,6 +6,9 @@
 [![](https://tokei.rs/b1/github/VelbazhdSoftwareLLC/IthakaBoardGame)](https://github.com/VelbazhdSoftwareLLC/IthakaBoardGame) 
 [![GitHub version](https://badge.fury.io/gh/VelbazhdSoftwareLLC%2FIthakaBoardGame.svg)](https://badge.fury.io/gh/VelbazhdSoftwareLLC%2FIthakaBoardGame)
 
+
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/VelbazhdSoftwareLLC/IthakaBoardGame.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VelbazhdSoftwareLLC/IthakaBoardGame/alerts/)
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/VelbazhdSoftwareLLC/IthakaBoardGame.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VelbazhdSoftwareLLC/IthakaBoardGame/context:java)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/65d5b87b609d4d8381e0451c394fe12c)](https://www.codacy.com/app/TodorBalabanov/IthakaBoardGame?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VelbazhdSoftwareLLC/IthakaBoardGame&amp;utm_campaign=Badge_Grade) 
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=VelbazhdSoftwareLLC_IthakaBoardGame&metric=alert_status)](https://sonarcloud.io/dashboard?id=VelbazhdSoftwareLLC_IthakaBoardGame) 
 [![codebeat badge](https://codebeat.co/badges/129caf76-7cea-479b-a4e5-9f21196aad81)](https://codebeat.co/projects/github-com-velbazhdsoftwarellc-ithakaboardgame-master) 
