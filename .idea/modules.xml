@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IthakaBoardGame.iml" filepath="$PROJECT_DIR$/IthakaBoardGame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" filepath="$PROJECT_DIR$/IthakaBoardGame/IthakaBoardGame-IthakaBoardGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IthakaBoardGame.iml" filepath="$PROJECT_DIR$/.idea/modules/IthakaBoardGame.iml" group="IthakaBoardGame" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="IthakaBoardGame/app" />
     </modules>
   </component>
 </project>
