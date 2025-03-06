@@ -1,0 +1,39 @@
+Вот перевод на русский язык:
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello_world">Привет, мир!</string>
+    <string name="game_over_message">Игра окончена</string>
+    <string name="app_name">Настольная игра Итака</string>
+    <string name="redirect_activity_is_missing_message">Отсутствует перенаправляющая активность!</string>
+    <string name="title_activity_splash">Настольная игра Итака</string>
+    <string name="title_activity_game">Настольная игра Итака</string>
+    <string name="title_activity_about">О видеоигре</string>
+    <string name="title_activity_help">Помощь</string>
+    <string name="new_game_menu">Новая игра</string>
+    <string name="help_menu">Помощь</string>
+    <string name="about_menu">О видеоигре</string>
+    <string name="about_text">Настольная игра Итака была изобретена Л. Линн Смитом в 2002 году. Версия для Android была реализована компанией Velbazhd Software LLC в качестве учебного пособия по программированию.</string>
+    <string name="help_text">Итака играется на сетке 4х4 с тремя фишками каждого из четырех цветов. Фишки изначально расставлены так, что три фишки каждого цвета занимают угловое пространство и два соседних краевых пространства.
+\n\n
+Все фишки являются общими для обоих игроков. Каждый игрок по очереди перемещает одну фишку на любое количество свободных ортогональных или диагональных клеток, соблюдая следующие ограничения:
+\n\n
+1) Перемещаемая фишка не должна быть той же, что и в предыдущий ход противника;
+\n\n
+2) Перемещаемая фишка должна начинать движение рядом с фишкой того же цвета.
+\n\n
+Победа достигается либо выстраиванием трех фишек одного цвета в ряд, либо оставлением противника без доступных ходов.
+\n\n
+Правила Итаки доступны на сайте World of Abstract Games, а также имеется ZRF-файл для игры с помощью Zillions of Games.</string>
+    <string name="single_player_game_label">Одиночная игра</string>
+    <string name="join_bluetooth_gaem_label">Присоединиться к игре по Bluetooth</string>
+    <string name="exit_game_label">Выход</string>
+    <string name="create_bluetooth_gaem_label">Создать игру по Bluetooth</string>
+    <string name="bluetooth_is_not_available">Bluetooth недоступен!</string>
+    <string name="server_is_not_available">Сервер недоступен!</string>
+    <string name="double_player_game_label">Игра вдвоем</string>
+    <string name="choose_server_title">Выберите Bluetooth-сервер: </string>
+    <string name="player_lable">Игрок: </string>
+
+</resources>
